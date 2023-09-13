@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Get API response</title>
+  </head>
+
+  <body>
+    
+    <button onclick="makeApiCalls()">Send Request</button>
+
+    <div id="results"></div>
+
+    <script>
+      async function makeApiCalls() {
+        const apiEndpoint = "http://54.145.95.16/zenful/api/getLearn/heading"; // Replace with your API endpoint
+
+        
+        const resultsDiv = document.getElementById("results");
+        resultsDiv.innerHTML = "Sending requests...";
+       
+
+        const promises = [];
+
+        for (let i = 0; i < 100; i++) {
+          // Create 100 asynchronous requests
+
+          promises.push(
+            fetch(apiEndpoint, {    //use await for wait request
+              headers: {
+                Authorization:
+                  "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYzViNDI1MWYyMGFmYmZmMGY5NGFhZjYxZmQ4N2VhZDZlZDk0MjkxMzdjNTEzZGQ0YTg1NWNhYTEwNGVkMjJkYjg2YzdmOTFhYjYwOTk3OGEiLCJpYXQiOjE2OTQ1ODk2NTEuNjkxMzc1LCJuYmYiOjE2OTQ1ODk2NTEuNjkxMzc4LCJleHAiOjE3MjYyMTIwNTEuNjczMjMxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.fXgiSZENIbVV6v9kQIrnQjCbSFgAVMSBBRlX3H-ydiM7mYMJ2VnvX1JDtY1PnZ-9QZXdPjoGUh0sGvJGDfsLCDfHyYv5ueRBBGlc0hfb4-oMORwn-baPA5Lm4JGAJyD3aodCDrarYpowGU-PN6QSe4vnLB36RkI-6xn6rehP77Ftk2mMInkYjF2_xt849AtzwbFaerhhEKBiJE9_b-oRqsAFFosxdqCoHzEm231Jv4TRAV3eeST2IQ9JLFDqTNRJo0TbX37uFloM9K7VavlNK1cG6hKfKZkOPn7bEezZTZ0ViEwQjKW_ZxcqXuJu8vDDteRRIN6hxiOyrzcxtQ0s6q4qpAMBg0gIoLXX5jiMqITHn7jnbR9c0LyVqDHRSxDrRLixCSbJtKL2MJKZj2Hdy7S8OZlenRJiY_c6r0IFIQFcsvJQmrOvD7xQE-GuVPbzsrGF94NPSNPWP5ee2lGy6gYQoLmftuisIebxIXbBzUrLbVE3q1uTyVkSMNxix38qF61vTmFUKITv1HE3STsTCMaxDulTASWufp04J-fegMR17npiCcApNIuS6TPpaYVCJUVjiKQPlWF0IOARf6NWj0h7zOanVzraJn9kwfdw3GkhWxOgv53MT4w2Aj59-0G-YMSENiN5vvpTcw0GxDvTj9nwAvSCai0Y56Oe0tkQyRQ",
+              },
+            })
+          );
+        }
+
+        try {
+          const responses = await Promise.all(promises);
+
+          for (const response of responses) {
+            if (response.ok) {
+              const data = await response.json();
+
+              resultsDiv.innerHTML += `<p>Response: ${JSON.stringify(
+                data
+              )}</p>`;
+            } else {
+              resultsDiv.innerHTML += `<p>Error: ${response.status} - ${response.statusText}</p>`;
+            }
+          }
+        } catch (error) {
+          console.error("An error occurred:", error);
+        }
+      }
+    </script>
+  </body>
+</html>

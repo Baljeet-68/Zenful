@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>POST API Requests</title>
+  </head>
+  <body>
+    <button onclick="sendRequests()">Send Request</button>
+    <div id="results"></div>
+
+    <script>
+      async function sendRequests() {
+        const payload = {
+          email: "test68@yopmail.com",
+          password: "12345678",
+          user_type: "1",
+        };
+
+        const resultsDiv = document.getElementById("results");
+        resultsDiv.innerHTML = "Sending requests...";
+
+        const requests = [];
+        for (let i = 0; i < 100 ; i++) {
+          // Change loop here
+          requests.push(
+            fetch("http://54.145.95.16/zenful/api/login", {
+              //Add api here!!
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(payload),
+            }).then((res)=>{
+              res.json().then((json)=>{
+                resultsDiv.innerHTML += `<p>Request ${i + 1}: ${JSON.stringify(
+                 json
+                )}</p>`;
+              }).catch((ex)=>{
+                resultsDiv.innerHTML += `<p>Request ${i + 1}: ${res.status}   ---   ${res.statusText}</p>`;
+              });
+            }).catch((error)=>{
+              resultsDiv.innerHTML += `<p>Request ${i + 1}: ${error.toString()}</p>`;
+            })
+          );
+        }
+
+        try {
+          const responses = await Promise.all(requests);
+          // const responseData = await Promise.all(
+          //   responses.map((res) => res.json())
+          // );
+
+          // resultsDiv.innerHTML = "<h2>Results:</h2>";
+          // responseData.forEach((data, index) => {
+          //   resultsDiv.innerHTML += `<p>Request ${index + 1}: ${JSON.stringify(
+          //     data
+          //   )}</p>`;
+          // });
+        } catch (error) {
+          resultsDiv.innerHTML += `<p>Error: ${error.message}</p>`;
+        }
+      }
+    </script>
+  </body>
+</html>
