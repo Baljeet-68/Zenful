@@ -1,654 +1,696 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="js-document-wrap" tabindex="">
-      <div>
-        <style type="text/css" id="static">
-          html,
-          body,
-          div,
-          span,
-          applet,
-          object,
-          iframe,
-          h1,
-          h2,
-          h3,
-          h4,
-          h5,
-          h6,
-          p,
-          blockquote,
-          pre,
-          a,
-          abbr,
-          acronym,
-          address,
-          big,
-          cite,
-          code,
-          del,
-          dfn,
-          em,
-          font,
-          img,
-          ins,
-          kbd,
-          q,
-          s,
-          samp,
-          small,
-          strike,
-          strong,
-          sub,
-          sup,
-          tt,
-          var,
-          b,
-          u,
-          i,
-          center,
-          dl,
-          dt,
-          dd,
-          ol,
-          ul,
-          li,
-          fieldset,
-          form,
-          label,
-          legend,
-          table,
-          caption,
-          tbody,
-          tfoot,
-          thead,
-          tr,
-          th,
-          td {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            outline: 0;
-            vertical-align: baseline;
-            background: transparent;
-          }
-          body {
-            font-family: Bodoni MT;
-            Width: 750px;
-            background: #ffffff;
-            line-height: 5;
-            text-align: left;
-            font-feature-settings: "liga"0;
-            -moz-font-feature-settings: "liga"off;
-          }
-
-          .circle-text::before {
-            vertical-align: middle;
-            content: "\2022"; /* This is the Unicode character for a bullet (•), which looks like a circle */
-            color: green; /* Color of the circle */
-            font-size: 35px; /* Size of the circle */
-          }
-          .skn-emu1 table {
-            border-collapse: collapse;
-            border-spacing: 0;
-            font-size: inherit;
-            color: inherit;
-            width: 100%;
-          }
-
-          .html {
-            width: 750px;
-          }
-
-          .skn-emu1 ul,
-          .skn-emu1 li {
-            list-style-type: disc;
-            margin: 0 0 0 13px;
-            padding: 0;
-          }
-
-          .skn-emu1 ul li {
-            margin: 0 0 0 16px;
-            padding: 0 0 0 3px;
-          }
-
-          .skn-emu1 .txt-bold {
-            font-weight: bold;
-          }
-
-          .skn-emu1 .dispin-blk {
-            display: inline-block;
-          }
-
-          .skn-emu1 .lowerborder {
-            margin-top: 1px;
-          }
-
-          .skn-emu1 .SECTION_CNTC,
-          .skn-emu1 .firstsection {
-            margin-top: 0 !important;
-          }
-
-          .skn-emu1 .name {
-            font-size: 15px;
-            line-height: 17px;
-            font-weight: bold;
-            padding: 10px 0 0 0;
-            text-align: center;
-            border-top: 20px solid #4e4e4e;
-            color: #4e4e4e;
-            text-transform: uppercase;
-          }
-
-          .skn-emu1 .name .fName {
-            color: #c33;
-          }
-
-          .skn-emu1 .paragraph {
-            position: relative;
-          }
-
-          .skn-emu1 .heading {
-            clear: both;
-            font-weight: bold;
-            text-transform: none;
-            color: #4e4e4e;
-            ;
-          }
-
-          .skn-emu1 .address {
-            position: relative;
-            text-align: center;
-            font-size: 0.917em;
-            line-height: 1.25em;
-            margin-top: 0;
-          }
-
-          .skn-emu1 .address2 {
-            position: relative;
-            text-align: left;
-            font-size: 0.917em;
-            line-height: 1.25em;
-          }
-
-          .skn-emu1 span.jobtitle,
-          .skn-emu1 span.degree,
-          .skn-emu1 span.companyname,
-          .skn-emu1 span.programline {
-            font-weight: bold;
-          }
-
-          .skn-emu1 span.companyname_educ {
-            font-weight: 900;
-          }
-
-          .skn-emu1 span.paddedline {
-            font-weight: 900;
-            display: block;
-            padding-right: 15px;
-            clear: both;
-          }
-
-          .skn-emu1 span.cdesc {
-            font-style: italic;
-          }
-
-          .skn-emu1 .bottomborder {
-            border-color: #c33;
-            padding: 0 0 1px 0;
-          }
-
-          .skn-emu1 .datesWrapper,
-          .skn-emu1 .flt-right {
-            float: right;
-          }
-
-          .skn-emu1 .table_wrapper {
-            width: 100%;
-            margin-top: 0;
-          }
-
-          .skn-emu1 table.twocol td {
-            width: 40%;
-          }
-
-          .skn-emu1 table.skills {
-            width: 100%;
-          }
-
-          .skn-emu1 table.skills th,
-          .skn-emu1 table.skills td {
-            width: 20%;
-            text-align: center;
-          }
-
-          .skn-emu1 table.skills th {
-            text-decoration: underline;
-          }
-
-          .skn-emu1 table.skills .skillname,
-          .skn-emu1 table.skills .skillrating {
-            text-align: left;
-            width: 35%;
-          }
-
-          .skn-emu1 table.skills .skillrating {
-            width: 20%;
-          }
-
-          .skn-emu1 table.skills .skillyears,
-          .skn-emu1 table.skills .skilllast {
-            width: 19%;
-          }
-
-          .skn-emu1 table.skills .pad1 {
-            width: 5%;
-          }
-
-          .skn-emu1 table.skills .pad2,
-          .skn-emu1 table.skills .pad3 {
-            width: 1%;
-          }
-
-          .skn-emu1 .resumeTitle,
-          .skn-emu1 .execRsmTitle {
-            font-weight: bold;
-            text-align: center;
-            color: #666;
-          }
-
-          .skn-emu1 td.twocol_2 {
-            border-left: 1px solid #fefdfd;
-          }
-
-          .skn-emu1 .social .sprtr {
-            padding-right: 2px;
-          }
-
-          .skn-emu1 .social:last-child .sprtr {
-            display: none;
-          }
-
-          /*Infographic Bar*/
-          .skn-emu1 .lang-sec.infobarsec .rating-bar {
-            background: #d5d6d6;
-            width: 100%;
-            clear: both;
-            margin-top: 3px;
-            position: relative;
-            page-break-inside: avoid;
-          }
-
-          .skn-emu1 .lang-sec.infobarsec .inner-rating {
-            background-color: #c33;
-            height: 4px;
-            position: relative;
-            width: 60%;
-          }
-
-          /*Infographic Common */
-          .skn-emu1 .lang-sec,
-          .skn-emu1 .skli-sec {
-            font-size: 0;
-          }
-
-          .skn-emu1 .lang-sec .field *,
-          .skn-emu1 .lang-sec .nativeLangPara .field,
-          .skn-emu1 .skli-sec .field * {
-            display: inline;
-            word-wrap: break-word;
-          }
-
-          .skn-emu1 .lang-sec .paragraph,
-          .skn-emu1 .skli-sec .paragraph {
-            display: inline-block;
-            vertical-align: top;
-            padding-bottom: 5px;
-            margin-top: 0;
-          }
-
-          .skn-emu1 .lang-sec .paragraph:nth-last-child(1),
-          .skn-emu1 .lang-sec .paragraph:nth-last-child(2),
-          .skn-emu1 .skli-sec .paragraph:nth-last-child(1),
-          .skn-emu1 .skli-sec .paragraph:nth-last-child(2) {
-            padding-bottom: 0;
-          }
-
-          .skn-emu1 .lang-sec .singlecolumn,
-          .skn-emu1 .skli-sec .singlecolumn {
-            margin-left: 0 !important;
-            position: relative;
-          }
-
-          .skn-emu1 .lang-sec .singlecolumn,
-          .skn-emu1 .lang-sec .maincolumn,
-          .skn-emu1 .skli-sec .singlecolumn,
-          .skn-emu1 .skli-sec .maincolumn {
-            width: 100%;
-          }
-
-          .skn-emu1 .lang-sec .paragraph.para_odd,
-          .skn-emu1 .skli-sec .paragraph.para_odd {
-            margin-right: 15px;
-          }
-
-          .skn-emu1 .lang-sec .sectiontitle,
-          .skn-emu1 .skli-sec .sectiontitle {
-            max-width: 100%;
-          }
-
-          .skn-emu1 .lang-sec .heading,
-          .skn-emu1 .skli-sec .heading {
-            word-wrap: break-word;
-          }
-
-          /*Infographic Tile*/
-          .skn-emu1 .sliced-rect {
-            height: 6px;
-            width: 100%;
-            line-height: 0px;
-            margin-top: 3px;
-            clear: both;
-          }
-
-          .skn-emu1 .sliced-rect .sliced-rect-tile {
-            height: 100%;
-            background-color: #d5d6d6;
-            float: left;
-            margin-right: 3px;
-          }
-
-          .skn-emu1 .sliced-rect .sliced-rect-tile:last-child {
-            margin-right: 0;
-          }
-
-          /*New Logic for Infographic*/
-          .skn-emu1 .lang-sec .infobarpara,
-          .skn-emu1 .lang-sec .infotilepara,
-          .skn-emu1 .skli-sec .infotilepara,
-          .skn-emu1 .skli-sec .infobarpara {
-            display: none;
-          }
-
-          .skn-emu1 .lang-sec.infobarsec .infobarpara,
-          .skn-emu1 .lang-sec.infotilesec .infotilepara,
-          .skn-emu1 .skli-sec.infotilesec .infotilepara {
-            display: block;
-          }
-
-          .skn-emu1 .hide-colon .colon {
-            display: none !important;
-          }
-
-          /*FIX for FORCEFULLY making left margin ZERO for CL*/
-          .skn-emu1 .sectionCL .paragraph {
-            margin-top: 0 !important;
-          }
-        </style>
-        <style type="text/css" id="dynamic" data-time="Tue Jun 06 2023 15:18:25 GMT+0530 (India Standard Time)">
-          .skn-emu1 {
-            line-height: 16px;
-          }
-
-          .skn-emu1 table {
-            line-height: 16px;
-          }
-
-          .skn-emu1.pagesize {
-            width: 700px;
-          }
-
-          .skn-emu1.vmargins {
-            padding-top: 25px;
-            padding-bottom: 25px;
-          }
-
-          .skn-emu1.hmargins {
-            padding-left: 40px;
-            padding-right: 40px;
-          }
-
-          .skn-emu1.fontsize,
-          .skn-emu1 .lang-sec.infobarsec .paragraph *,
-          .skn-emu1 .lang-sec.infotilesec .paragraph *,
-          .skn-emu1 .skli-sec.infotilesec .paragraph * {
-            font-size: 13px;
-          }
-
-          .skn-emu1.fontface {
-            font-family: Bodoni MT;
-          }
-
-          .skn-emu1 .section {
-            margin-top: 10px;
-          }
-
-          .skn-emu1 .heading {
-            margin-bottom: 5px;
-          }
-
-          .skn-emu1 .paragraph {
-            margin-top: 11px;
-          }
-
-          .skn-emu1 .firstparagraph {
-            margin-top: 0;
-          }
-
-          .skn-emu1 .singlecolumn,
-          .skn-emu1 .maincolumn {
-            margin-left: 80px;
-          }
-
-          .skn-emu1 .bottomborder {
-            border-bottom: 2px solid;
-          }
-
-          .skn-emu1 .sectiontitle {
-            font-size: 18px;
-            line-height: 21px;
-          }
-
-          .skn-emu1 table.skills td {
-            padding-top: 5px;
-          }
-
-          .skn-emu1 .name {
-            font-size: 30px;
-            line-height: 45px;
-          }
-
-          .skn-emu1 .address {
-            font-size: 11px;
-            line-height: 15px;
-          }
-
-          .skn-emu1 .resumeTitle {
-            font-size: 16px;
-            line-height: 23px;
-          }
-
-          .skn-emu1 .rtlSec {
-            margin-top: 16px;
-          }
-
-          .skn-emu1 .execRsmTitle {
-            font-size: 13px;
-            line-height: 17px;
-          }
-
-          .skn-emu1 span.compDescWrap {
-            margin-bottom: 5px;
-          }
-
-          .skn-emu1 .name .fName {
-            color: #c33;
-          }
-
-          .skn-emu1 .bottomborder {
-            border-color: #c33;
-          }
-
-          /*Infographic*/
-          .skn-emu1 .lang-sec.infobarsec .inner-rating,
-          .skn-emu1 .paragraph .sliced-rect .sliced-rect-tile.ratvfill {
-            background-color: #c33;
-          }
-
-          /*Infographic tiles*/
-          .skn-emu1 .lang-sec .paragraph,
-          .skn-emu1 .skli-sec .paragraph {
-            width: 245px;
-          }
-
-          .skn-emu1 .lang-sec,
-          .skn-emu1 .skli-sec {
-            padding-left: 138px;
-          }
-
-          .skn-emu1 .lang-sec .heading,
-          .skn-emu1 .skli-sec .heading,
-          .skn-emu1 .skli-sec .title-edit,
-          .skn-emu1 .lang-sec .title-edit {
-            margin-left: -138px;
-          }
-
-          .skn-emu1 .lang-sec .nativeLangPara {
-            width: 497px;
-            max-width: 497px;
-          }
-
-          /*Finalize Fixes*/
-          .skn-emu1 .lang-sec .sortableInner .sortable-item,
-          .skn-emu1 .skli-sec .sortableInner .sortable-item {
-            display: inline-block;
-          }
-
-          .skn-emu1 .lang-sec .sortable-item .paragraph,
-          .skn-emu1 .skli-sec .sortable-item .paragraph {
-            padding-bottom: 5px;
-          }
-
-          .skn-emu1 .lang-sec .sortable-item:nth-last-child(1) .paragraph,
-          .skn-emu1 .lang-sec .sortable-item:nth-last-child(2) .paragraph,
-          .skn-emu1 .skli-sec .sortable-item:nth-last-child(1) .paragraph,
-          .skn-emu1 .skli-sec .sortable-item:nth-last-child(2) .paragraph {
-            padding-bottom: 0;
-          }
-
-          /*FIX for Re-calculating width of singlecolumn for CL*/
-          .skn-emu1 .sectionCL .singlecolumn {
-            margin-left: 0 !important;
-            width: 100%;
-            font-size: 13px;
-          }
-
-          .skn-emu1 .address2 {
-            font-size: 18px;
-            line-height: 16px;
-          }
-
-          p {
-            text-align: justify;
-            padding-right: 15px
-          }
-
-          .clearfix.doc-item2 {
-            width: 315px;
-          }
-
-          span#FIELD_JTIT {
-            font-size: 15px;
-          }
-
-          .sortable-item.paragraph-container.native-lang-2 {
-            display: flex;
-          }
-        </style>
-      </div>
-      <div class="document doc-root fontsize fontface vmargins hmargins pagesize skn-emu1 EMU1 LUK" docskinwidth="648" style="max-width: 749.7px">
-        <div class="sortable-item section-container name-contact">
-          <div id="SECTION_NAME9eae57ee-4e9f-41a6-9d57-2164e1a8d599" class="section SECTION_NAME" data-section-cd="NAME">
-            <div class="doc-item">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="js-document-wrap" tabindex="">
+    <div>
+      <style type="text/css" id="static">
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        font,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td {
+          margin: 0;
+          padding: 0;
+          border: 0;
+          outline: 0;
+          vertical-align: baseline;
+          background: transparent;
+        }
+
+        body {
+          font-family: Bodoni MT;
+          Width: 750px;
+          background: #ffffff;
+          line-height: 5;
+          text-align: left;
+          font-feature-settings: "liga" 0;
+          -moz-font-feature-settings: "liga" off;
+        }
+
+        .circle-text::before {
+          vertical-align: middle;
+          content: "\2022";
+          /* This is the Unicode character for a bullet (•), which looks like a circle */
+          color: green;
+          /* Color of the circle */
+          font-size: 35px;
+          /* Size of the circle */
+        }
+
+        .skn-emu1 table {
+          border-collapse: collapse;
+          border-spacing: 0;
+          font-size: inherit;
+          color: inherit;
+          width: 100%;
+        }
+
+        .html {
+          width: 750px;
+        }
+
+        .skn-emu1 ul,
+        .skn-emu1 li {
+          list-style-type: disc;
+          margin: 0 0 0 13px;
+          padding: 0;
+        }
+
+        .skn-emu1 ul li {
+          margin: 0 0 0 16px;
+          padding: 0 0 0 3px;
+        }
+
+        .skn-emu1 .txt-bold {
+          font-weight: bold;
+        }
+
+        .skn-emu1 .dispin-blk {
+          display: inline-block;
+        }
+
+        .skn-emu1 .lowerborder {
+          margin-top: 1px;
+        }
+
+        .skn-emu1 .SECTION_CNTC,
+        .skn-emu1 .firstsection {
+          margin-top: 0 !important;
+        }
+
+        .skn-emu1 .name {
+          font-size: 15px;
+          line-height: 17px;
+          font-weight: bold;
+          padding: 10px 0 0 0;
+          text-align: center;
+          border-top: 20px solid #4e4e4e;
+          color: #4e4e4e;
+          text-transform: uppercase;
+        }
+
+        .skn-emu1 .name .fName {
+          color: #c33;
+        }
+
+        .skn-emu1 .paragraph {
+          position: relative;
+        }
+
+        .skn-emu1 .heading {
+          clear: both;
+          font-weight: bold;
+          text-transform: none;
+          color: #4e4e4e;
+          ;
+        }
+
+        .skn-emu1 .address {
+          position: relative;
+          text-align: center;
+          font-size: 0.917em;
+          line-height: 1.25em;
+          margin-top: 0;
+        }
+
+        .skn-emu1 .address2 {
+          position: relative;
+          text-align: left;
+          font-size: 0.917em;
+          line-height: 1.25em;
+        }
+
+        .skn-emu1 span.jobtitle,
+        .skn-emu1 span.degree,
+        .skn-emu1 span.companyname,
+        .skn-emu1 span.programline {
+          font-weight: bold;
+        }
+
+        .skn-emu1 span.companyname_educ {
+          font-weight: 900;
+        }
+
+        .skn-emu1 span.paddedline {
+          font-weight: 900;
+          display: block;
+          padding-right: 15px;
+          clear: both;
+        }
+
+        .skn-emu1 span.cdesc {
+          font-style: italic;
+        }
+
+        .skn-emu1 .bottomborder {
+          border-color: #c33;
+          padding: 0 0 1px 0;
+        }
+
+        .skn-emu1 .datesWrapper,
+        .skn-emu1 .flt-right {
+          float: right;
+        }
+
+        .skn-emu1 .table_wrapper {
+          width: 100%;
+          margin-top: 0;
+        }
+
+        .skn-emu1 table.twocol td {
+          width: 40%;
+        }
+
+        .skn-emu1 table.skills {
+          width: 100%;
+        }
+
+        .skn-emu1 table.skills th,
+        .skn-emu1 table.skills td {
+          width: 20%;
+          text-align: center;
+        }
+
+        .skn-emu1 table.skills th {
+          text-decoration: underline;
+        }
+
+        .skn-emu1 table.skills .skillname,
+        .skn-emu1 table.skills .skillrating {
+          text-align: left;
+          width: 35%;
+        }
+
+        .skn-emu1 table.skills .skillrating {
+          width: 20%;
+        }
+
+        .skn-emu1 table.skills .skillyears,
+        .skn-emu1 table.skills .skilllast {
+          width: 19%;
+        }
+
+        .skn-emu1 table.skills .pad1 {
+          width: 5%;
+        }
+
+        .skn-emu1 table.skills .pad2,
+        .skn-emu1 table.skills .pad3 {
+          width: 1%;
+        }
+
+        .skn-emu1 .resumeTitle,
+        .skn-emu1 .execRsmTitle {
+          font-weight: bold;
+          text-align: center;
+          color: #666;
+        }
+
+        .skn-emu1 td.twocol_2 {
+          border-left: 1px solid #fefdfd;
+        }
+
+        .skn-emu1 .social .sprtr {
+          padding-right: 2px;
+        }
+
+        .skn-emu1 .social:last-child .sprtr {
+          display: none;
+        }
+
+        /*Infographic Bar*/
+        .skn-emu1 .lang-sec.infobarsec .rating-bar {
+          background: #d5d6d6;
+          width: 100%;
+          clear: both;
+          margin-top: 3px;
+          position: relative;
+          page-break-inside: avoid;
+        }
+
+        .skn-emu1 .lang-sec.infobarsec .inner-rating {
+          background-color: #c33;
+          height: 4px;
+          position: relative;
+          width: 60%;
+        }
+
+        /*Infographic Common */
+        .skn-emu1 .lang-sec,
+        .skn-emu1 .skli-sec {
+          font-size: 0;
+        }
+
+        .skn-emu1 .lang-sec .field *,
+        .skn-emu1 .lang-sec .nativeLangPara .field,
+        .skn-emu1 .skli-sec .field * {
+          display: inline;
+          word-wrap: break-word;
+        }
+
+        .skn-emu1 .lang-sec .paragraph,
+        .skn-emu1 .skli-sec .paragraph {
+          display: inline-block;
+          vertical-align: top;
+          padding-bottom: 5px;
+          margin-top: 0;
+        }
+
+        .skn-emu1 .lang-sec .paragraph:nth-last-child(1),
+        .skn-emu1 .lang-sec .paragraph:nth-last-child(2),
+        .skn-emu1 .skli-sec .paragraph:nth-last-child(1),
+        .skn-emu1 .skli-sec .paragraph:nth-last-child(2) {
+          padding-bottom: 0;
+        }
+
+        .skn-emu1 .lang-sec .singlecolumn,
+        .skn-emu1 .skli-sec .singlecolumn {
+          margin-left: 0 !important;
+          position: relative;
+        }
+
+        .skn-emu1 .lang-sec .singlecolumn,
+        .skn-emu1 .lang-sec .maincolumn,
+        .skn-emu1 .skli-sec .singlecolumn,
+        .skn-emu1 .skli-sec .maincolumn {
+          width: 100%;
+        }
+
+        .skn-emu1 .lang-sec .paragraph.para_odd,
+        .skn-emu1 .skli-sec .paragraph.para_odd {
+          margin-right: 15px;
+        }
+
+        .skn-emu1 .lang-sec .sectiontitle,
+        .skn-emu1 .skli-sec .sectiontitle {
+          max-width: 100%;
+        }
+
+        .skn-emu1 .lang-sec .heading,
+        .skn-emu1 .skli-sec .heading {
+          word-wrap: break-word;
+        }
+
+        /*Infographic Tile*/
+        .skn-emu1 .sliced-rect {
+          height: 6px;
+          width: 100%;
+          line-height: 0px;
+          margin-top: 3px;
+          clear: both;
+        }
+
+        .skn-emu1 .sliced-rect .sliced-rect-tile {
+          height: 100%;
+          background-color: #d5d6d6;
+          float: left;
+          margin-right: 3px;
+        }
+
+        .skn-emu1 .sliced-rect .sliced-rect-tile:last-child {
+          margin-right: 0;
+        }
+
+        /*New Logic for Infographic*/
+        .skn-emu1 .lang-sec .infobarpara,
+        .skn-emu1 .lang-sec .infotilepara,
+        .skn-emu1 .skli-sec .infotilepara,
+        .skn-emu1 .skli-sec .infobarpara {
+          display: none;
+        }
+
+        .skn-emu1 .lang-sec.infobarsec .infobarpara,
+        .skn-emu1 .lang-sec.infotilesec .infotilepara,
+        .skn-emu1 .skli-sec.infotilesec .infotilepara {
+          display: block;
+        }
+
+        .skn-emu1 .hide-colon .colon {
+          display: none !important;
+        }
+
+        /*FIX for FORCEFULLY making left margin ZERO for CL*/
+        .skn-emu1 .sectionCL .paragraph {
+          margin-top: 0 !important;
+        }
+      </style>
+      <style type="text/css" id="dynamic" data-time="Tue Jun 06 2023 15:18:25 GMT+0530 (India Standard Time)">
+        .skn-emu1 {
+          line-height: 16px;
+        }
+
+        .skn-emu1 table {
+          line-height: 16px;
+        }
+
+        .skn-emu1.pagesize {
+          width: 700px;
+        }
+
+        .skn-emu1.vmargins {
+          padding-top: 25px;
+          padding-bottom: 25px;
+        }
+
+        .skn-emu1.hmargins {
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+
+        .skn-emu1.fontsize,
+        .skn-emu1 .lang-sec.infobarsec .paragraph *,
+        .skn-emu1 .lang-sec.infotilesec .paragraph *,
+        .skn-emu1 .skli-sec.infotilesec .paragraph * {
+          font-size: 13px;
+        }
+
+        .skn-emu1.fontface {
+          font-family: 'Times New Roman', Times, serif;
+        }
+
+        .skn-emu1 .section {
+          margin-top: 10px;
+        }
+
+        .skn-emu1 .heading {
+          margin-bottom: 8px;
+        }
+
+        .skn-emu1 .paragraph {
+          margin-top: 08px;
+        }
+
+        .skn-emu1 .firstparagraph {
+          margin-top: 0;
+        }
+
+        .skn-emu1 .singlecolumn,
+        .skn-emu1 .maincolumn {
+          margin-left: 80px;
+        }
+
+        .skn-emu1 .bottomborder {
+          border-bottom: 2px solid;
+        }
+
+        .skn-emu1 .sectiontitle {
+          font-size: 18px;
+          line-height: 21px;
+        }
+
+        .skn-emu1 table.skills td {
+          padding-top: 5px;
+        }
+
+        .skn-emu1 .name {
+          font-size: 30px;
+          line-height: 45px;
+        }
+
+        .skn-emu1 .address {
+          font-size: 11px;
+          line-height: 15px;
+        }
+
+        .skn-emu1 .resumeTitle {
+          font-size: 16px;
+          line-height: 23px;
+        }
+
+        .skn-emu1 .rtlSec {
+          margin-top: 16px;
+        }
+
+        .skn-emu1 .execRsmTitle {
+          font-size: 13px;
+          line-height: 17px;
+        }
+
+        .skn-emu1 span.compDescWrap {
+          margin-bottom: 5px;
+        }
+
+        .skn-emu1 .name .fName {
+          color: #c33;
+        }
+
+        .skn-emu1 .bottomborder {
+          border-color: #c33;
+        }
+
+        /*Infographic*/
+        .skn-emu1 .lang-sec.infobarsec .inner-rating,
+        .skn-emu1 .paragraph .sliced-rect .sliced-rect-tile.ratvfill {
+          background-color: #c33;
+        }
+
+        /*Infographic tiles*/
+        .skn-emu1 .lang-sec .paragraph,
+        .skn-emu1 .skli-sec .paragraph {
+          width: 245px;
+        }
+
+        .skn-emu1 .lang-sec,
+        .skn-emu1 .skli-sec {
+          padding-left: 138px;
+        }
+
+        .skn-emu1 .lang-sec .heading,
+        .skn-emu1 .skli-sec .heading,
+        .skn-emu1 .skli-sec .title-edit,
+        .skn-emu1 .lang-sec .title-edit {
+          margin-left: -138px;
+        }
+
+        .skn-emu1 .lang-sec .nativeLangPara {
+          width: 497px;
+          max-width: 497px;
+        }
+
+        /*Finalize Fixes*/
+        .skn-emu1 .lang-sec .sortableInner .sortable-item,
+        .skn-emu1 .skli-sec .sortableInner .sortable-item {
+          display: inline-block;
+        }
+
+        .skn-emu1 .lang-sec .sortable-item .paragraph,
+        .skn-emu1 .skli-sec .sortable-item .paragraph {
+          padding-bottom: 5px;
+        }
+
+        .skn-emu1 .lang-sec .sortable-item:nth-last-child(1) .paragraph,
+        .skn-emu1 .lang-sec .sortable-item:nth-last-child(2) .paragraph,
+        .skn-emu1 .skli-sec .sortable-item:nth-last-child(1) .paragraph,
+        .skn-emu1 .skli-sec .sortable-item:nth-last-child(2) .paragraph {
+          padding-bottom: 0;
+        }
+
+        /*FIX for Re-calculating width of singlecolumn for CL*/
+        .skn-emu1 .sectionCL .singlecolumn {
+          margin-left: 0 !important;
+          width: 100%;
+          font-size: 13px;
+        }
+
+        .skn-emu1 .address2 {
+          font-size: 18px;
+          line-height: 16px;
+        }
+
+        p {
+          text-align: justify;
+          padding-right: 15px
+        }
+
+        .clearfix.doc-item2 {
+          width: 315px;
+        }
+
+        span#FIELD_JTIT {
+          font-size: 15px;
+        }
+
+        .sortable-item.paragraph-container.native-lang-2 {
+          display: flex;
+        }
+      </style>
+    </div>
+    <div class="document doc-root fontsize fontface vmargins hmargins pagesize skn-emu1 EMU1 LUK" docskinwidth="648"
+      style="max-width: 749.7px">
+      <div class="sortable-item section-container name-contact">
+        <div id="SECTION_NAME9eae57ee-4e9f-41a6-9d57-2164e1a8d599" class="section SECTION_NAME" data-section-cd="NAME">
+          <div class="doc-item">
+            <div class="">
               <div class="">
+                <div id="PARAGRAPH_NAME_44b7bb18-ba55-4965-9714-ca2bf6bbf40c"
+                  class="paragraph PARAGRAPH_NAME firstparagraph">
+                  <div>
+                    <div class="name">
+                      <span class="fName" id="FIELD_FNAM">Baljeet</span>
+                      <span dependency="FNAM+LNAM"></span>
+                      <span id="FIELD_LNAM">Singh</span>
+                    </div>
+                    <div class="address">
+                      <span id="FIELD_STRT"></span>
+                      <span dependency="STRT" style="display: none">, </span>
+                      <span class="spaced" id="FIELD_CITY"></span>
+                      <span dependency="CITY+STAT|ZIPC" style="display: none">, </span>
+                      <span class="spaced" id="FIELD_STAT"></span>
+                      <span dependency="STAT+ZIPC" style="display: none"></span>
+                      <span class="spaced" id="FIELD_ZIPC"></span>
+                      <span id="FIELD_ADDR">29, Sant Nagar Palace, Indore(M.P.) India 452020,</span>
+                      <strong id="FIELD_ADDR">7566148768, Baljeetsaini.68@gmail.com</strong>
+                      <span dependency="DOB1" class="dispin-blk" style="display: none">
+                        <span class="txt-bold">
+                          <span class="xslt_static_change">undefined</span>
+                          <span>: </span>
+                        </span>
+                        <span id="FIELD_DOB1"></span>
+                      </span>
+                      <span dependency="DOB1" style="display: none">
+                        <span dependency="NTLY|DRIV|MSTA|GNDR|WEB1|SOCL" style="display: none"> | </span>
+                      </span>
+                      <span dependency="NTLY" class="dispin-blk" style="display: none">
+                        <span class="txt-bold">
+                          <span class="xslt_static_change">Nationality</span>
+                          <span>: </span>
+                        </span>
+                        <span id="FIELD_NTLY"></span>
+                      </span>
+                      <span dependency="NTLY" style="display: none">
+                        <span dependency="DRIV|MSTA|GNDR|WEB1|SOCL" style="display: none"> | </span>
+                      </span>
+                      <span dependency="DRIV" class="dispin-blk" style="display: none">
+                        <span class="txt-bold">
+                          <span class="xslt_static_change">Permit</span>
+                          <span>: </span>
+                        </span>
+                        <span id="FIELD_DRIV"></span>
+                      </span>
+                      <span dependency="DRIV" style="display: none">
+                        <span dependency="MSTA|GNDR|WEB1|SOCL" style="display: none"> | </span>
+                      </span>
+                      <span dependency="MSTA" class="dispin-blk" style="display: none">
+                        <span class="txt-bold">
+                          <span class="xslt_static_change"></span>
+                          <span>: </span>
+                        </span>
+                        <span id="FIELD_MSTA"></span>
+                      </span>
+                      <span dependency="MSTA" style="display: none">
+                        <span dependency="GNDR|WEB1|SOCL" style="display: none"> | </span>
+                      </span>
+                      <span dependency="GNDR" class="dispin-blk" style="display: none">
+                        <span class="xslt_static_change txt-bold">Gender</span>
+                        <span class="txt-bold">: </span>
+                        <span id="FIELD_GNDR"></span>
+                      </span>
+                      <span dependency="GNDR" style="display: none">
+                        <span dependency="WEB1|SOCL" style="display: none"> | </span>
+                      </span>
+                      <span dependency="WEB1" class="dispin-blk" style="display: none">
+                        <span class="xslt_static_change txt-bold">Web</span>
+                        <span class="txt-bold">: </span>
+                        <span id="FIELD_WEB1"></span>
+                      </span>
+                      <span dependency="WEB1+SOCL" style="display: none"> | </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="parent-wrapper">
+        <div class="sortable-item section-container data-SUMM">
+          <div>
+            <div id="SECTION_SUMM45ef1a3f-b02a-448a-949c-3d1a43215523" class="section SECTION_SUMM has-title"
+              data-section-cd="SUMM">
+              <div class="doc-item">
+                <div class="heading bottomborder">
+                  <div class="sectiontitle" id="SECTIONNAME_SUMM"> Professional Summary </div>
+                </div>
                 <div class="">
-                  <div id="PARAGRAPH_NAME_44b7bb18-ba55-4965-9714-ca2bf6bbf40c" class="paragraph PARAGRAPH_NAME firstparagraph">
-                    <div>
-                      <div class="name">
-                        <span class="fName" id="FIELD_FNAM">Baljeet</span>
-                        <span dependency="FNAM+LNAM"></span>
-                        <span id="FIELD_LNAM">Singh</span>
-                      </div>
-                      <div class="address">
-                        <span id="FIELD_STRT"></span>
-                        <span dependency="STRT" style="display: none">, </span>
-                        <span class="spaced" id="FIELD_CITY"></span>
-                        <span dependency="CITY+STAT|ZIPC" style="display: none">, </span>
-                        <span class="spaced" id="FIELD_STAT"></span>
-                        <span dependency="STAT+ZIPC" style="display: none"></span>
-                        <span class="spaced" id="FIELD_ZIPC"></span>
-                        <span id="FIELD_ADDR">29, Sant Nagar Palace, Indore(M.P.) India 452020,</span>
-                        <strong id="FIELD_ADDR">7566148768, Baljeetsaini.68@gmail.com</strong>
-                        <span dependency="DOB1" class="dispin-blk" style="display: none">
-                          <span class="txt-bold">
-                            <span class="xslt_static_change">undefined</span>
-                            <span>: </span>
-                          </span>
-                          <span id="FIELD_DOB1"></span>
-                        </span>
-                        <span dependency="DOB1" style="display: none">
-                          <span dependency="NTLY|DRIV|MSTA|GNDR|WEB1|SOCL" style="display: none"> | </span>
-                        </span>
-                        <span dependency="NTLY" class="dispin-blk" style="display: none">
-                          <span class="txt-bold">
-                            <span class="xslt_static_change">Nationality</span>
-                            <span>: </span>
-                          </span>
-                          <span id="FIELD_NTLY"></span>
-                        </span>
-                        <span dependency="NTLY" style="display: none">
-                          <span dependency="DRIV|MSTA|GNDR|WEB1|SOCL" style="display: none"> | </span>
-                        </span>
-                        <span dependency="DRIV" class="dispin-blk" style="display: none">
-                          <span class="txt-bold">
-                            <span class="xslt_static_change">Permit</span>
-                            <span>: </span>
-                          </span>
-                          <span id="FIELD_DRIV"></span>
-                        </span>
-                        <span dependency="DRIV" style="display: none">
-                          <span dependency="MSTA|GNDR|WEB1|SOCL" style="display: none"> | </span>
-                        </span>
-                        <span dependency="MSTA" class="dispin-blk" style="display: none">
-                          <span class="txt-bold">
-                            <span class="xslt_static_change"></span>
-                            <span>: </span>
-                          </span>
-                          <span id="FIELD_MSTA"></span>
-                        </span>
-                        <span dependency="MSTA" style="display: none">
-                          <span dependency="GNDR|WEB1|SOCL" style="display: none"> | </span>
-                        </span>
-                        <span dependency="GNDR" class="dispin-blk" style="display: none">
-                          <span class="xslt_static_change txt-bold">Gender</span>
-                          <span class="txt-bold">: </span>
-                          <span id="FIELD_GNDR"></span>
-                        </span>
-                        <span dependency="GNDR" style="display: none">
-                          <span dependency="WEB1|SOCL" style="display: none"> | </span>
-                        </span>
-                        <span dependency="WEB1" class="dispin-blk" style="display: none">
-                          <span class="xslt_static_change txt-bold">Web</span>
-                          <span class="txt-bold">: </span>
-                          <span id="FIELD_WEB1"></span>
-                        </span>
-                        <span dependency="WEB1+SOCL" style="display: none"> | </span>
+                  <div class="">
+                    <div id="PARAGRAPH_SUMM_db1abf75-1d6d-4c99-b5f9-f766e05db4b8"
+                      class="paragraph PARAGRAPH_SUMM firstparagraph">
+                      <div class="clearfix doc-item">
+                        <div class="singlecolumn" id="FIELD_FRFM">
+                          <p> Experienced Project Manager, Software Quality Analyst, and Production Engineering Expert
+                            with a strong track record in leading projects to successful completion, ensuring
+                            high-quality results within budget and schedule. Proficient in project planning, resource
+                            management, and stakeholder communication. Specialized in software testing, including Test
+                            Planning, Test Case Design, and Defect analysis, with extensive knowledge of Software
+                            Testing Life Cycle and Software Development Life Cycle. Four years of hands-on experience in
+                            production engineering, handling heavy machinery and heat treatment basics. Skilled in
+                            quality assurance tools and processes, Excel, Google Sheets, and Microsoft Office. Committed
+                            to excellence and ready to contribute to your success. </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -657,633 +699,208 @@
             </div>
           </div>
         </div>
-        <div class="parent-wrapper">
-          <div class="sortable-item section-container data-SUMM">
-            <div>
-              <div id="SECTION_SUMM45ef1a3f-b02a-448a-949c-3d1a43215523" class="section SECTION_SUMM has-title" data-section-cd="SUMM">
-                <div class="doc-item">
-                  <div class="heading bottomborder">
-                    <div class="sectiontitle" id="SECTIONNAME_SUMM"> Professional Summary </div>
-                  </div>
-                  <div class="">
-                    <div class="">
-                      <div id="PARAGRAPH_SUMM_db1abf75-1d6d-4c99-b5f9-f766e05db4b8" class="paragraph PARAGRAPH_SUMM firstparagraph">
-                        <div class="clearfix doc-item">
-                          <div class="singlecolumn" id="FIELD_FRFM">
-                            <p> Experienced Project Manager, Software Quality Analyst, and Production Engineering Expert with a strong track record in leading projects to successful completion, ensuring high-quality results within budget and schedule. Proficient in project planning, resource management, and stakeholder communication. Specialized in software testing, including Test Planning, Test Case Design, and Defect analysis, with extensive knowledge of Software Testing Life Cycle and Software Development Life Cycle. Four years of hands-on experience in production engineering, handling heavy machinery and heat treatment basics. Skilled in quality assurance tools and processes, Excel, Google Sheets, and Microsoft Office. Committed to excellence and ready to contribute to your success. </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+        <div class="sortable-item section-container data-EXPR">
+          <div>
+            <div id="SECTION_EXPR1474fc35-e19c-4e06-ab75-de6d5af5d272" class="section SECTION_EXPR multi-para has-title"
+              data-section-cd="EXPR">
+              <div class="doc-item">
+                <div class="heading bottomborder">
+                  <div class="sectiontitle" id="SECTIONNAME_EXPR"> Experience </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="sortable-item section-container data-EXPR">
-            <div>
-              <div id="SECTION_EXPR1474fc35-e19c-4e06-ab75-de6d5af5d272" class="section SECTION_EXPR multi-para has-title" data-section-cd="EXPR">
-                <div class="doc-item">
-                  <div class="heading bottomborder">
-                    <div class="sectiontitle" id="SECTIONNAME_EXPR"> Experience </div>
-                  </div>
-                  <div class="">
-                    <div class="sortableInner">
-                      <div class="sortable-item paragraph-container">
-                        <div id="PARAGRAPH_EXPR_3280449d-72b2-4368-cb9d-3e82c65d37cc" class="paragraph PARAGRAPH_EXPR firstparagraph">
-                          <div class="clearfix doc-item">
-                            <div class="singlecolumn">
-                              <span class="paddedline" dependency="JTIT|JSTD|EDDT">
-                                <span class="jobtitle" id="FIELD_JTIT">IT Project Manager</span>
-                                <span dependency="JTIT"></span>
-                                <span class="datesWrapper" dependency="JSTD|EDDT">
-                                  <span class="jobdates" id="FIELD_JSTD" format="%b %Y">May 2023</span>
-                                  <span dependency="JSTD+EDDT"> to </span>
-                                  <span class="jobdates" id="FIELD_EDDT" format="%b %Y">Current</span>
-                                  <br dependency="JSTD|EDDT" />
-                                </span>
-                              </span>
-                              <span class="paddedline" dependency="COMP|JSTA|JCIT|JCNT">
-                                <span class="companyname" id="FIELD_COMP">MMF Infotech Technologies Pvt Ltd</span>
-                                <span dependency="COMP">
-                                  <span dependency="JCIT|JSTA|JCNT"> - </span>
-                                </span>
-                                <span class="joblocation jobcity" id="FIELD_JCIT">Indore</span>
-                                <span dependency="JCIT+JSTA|JCNT">, </span>
-                                <span class="joblocation jobstate" id="FIELD_JSTA">India</span>
-                                <span dependency="JSTA+JCNT" style="display: none">,</span>
-                                <span class="joblocation jobcountry" id="FIELD_JCNT"></span>
-                              </span>
-                              <span class="jobline" id="FIELD_JDES">
-                                <p> As an experienced IT Project Manager, I bring a wealth of expertise, successfully leading and delivering projects with precise planning and a Quality Assurance perspective. I excel in managing cross-functional teams, ensuring projects are on time, within budget, and of top-notch quality. Passionate about technology-driven innovation and business growth, I am well-equipped to tackle IT project challenges, delivering successful outcomes for organizations. </p>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="sortable-item paragraph-container">
-                        <div id="PARAGRAPH_EXPR_6c318cec-3a54-cdf9-e380-4215e5ebfde1" class="paragraph PARAGRAPH_EXPR">
-                          <div class="clearfix doc-item">
-                            <div class="singlecolumn">
-                              <span class="paddedline" dependency="JTIT|JSTD|EDDT">
-                                <span class="jobtitle" id="FIELD_JTIT">Quality Assurance Analyst</span>
-                                <span dependency="JTIT"></span>
-                                <span class="datesWrapper" dependency="JSTD|EDDT">
-                                  <span class="jobdates" id="FIELD_JSTD" format="%b %Y">Sep 2022</span>
-                                  <span dependency="JSTD+EDDT"> to </span>
-                                  <span class="jobdates" id="FIELD_EDDT" format="%b %Y">May 2023</span>
-                                  <br dependency="JSTD|EDDT" />
-                                </span>
-                              </span>
-                              <span class="paddedline" dependency="COMP|JSTA|JCIT|JCNT">
-                                <span class="companyname" id="FIELD_COMP">MMF Infotech Technologies Pvt Ltd</span>
-                                <span dependency="COMP">
-                                  <span dependency="JCIT|JSTA|JCNT"> - </span>
-                                </span>
-                                <span class="joblocation jobcity" id="FIELD_JCIT">Indore</span>
-                                <span dependency="JCIT+JSTA|JCNT">, </span>
-                                <span class="joblocation jobstate" id="FIELD_JSTA">India</span>
-                                <span dependency="JSTA+JCNT" style="display: none">,</span>
-                                <span class="joblocation jobcountry" id="FIELD_JCNT"></span>
-                              </span>
-                              <span class="jobline" id="FIELD_JDES">
-                                <p> As a Quality Analyst, I identify and fix production defects, implementing preventative and corrective actions to meet user expectations. Skilled in data analysis, I improve product quality and efficiency. With extensive testing experience, I create effective plans, anticipating issues to ensure high standards. Thriving in fast-paced environments, I excel in delivering results. Passionate about quality assurance, I seek new challenges. If you need a results-oriented Quality Analyst, please reach out. </p>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="sortable-item paragraph-container">
-                        <div id="PARAGRAPH_EXPR_6c318cec-3a54-cdf9-e380-4215e5ebfde1" class="paragraph PARAGRAPH_EXPR">
-                          <div class="clearfix doc-item">
-                            <div class="singlecolumn">
-                              <span class="paddedline" dependency="JTIT|JSTD|EDDT">
-                                <span class="jobtitle" id="FIELD_JTIT">Quality Analyst Intern</span>
-                                <span dependency="JTIT"></span>
-                                <span class="datesWrapper" dependency="JSTD|EDDT">
-                                  <span class="jobdates" id="FIELD_JSTD" format="%b %Y">Jun 2022</span>
-                                  <span dependency="JSTD+EDDT"> to </span>
-                                  <span class="jobdates" id="FIELD_EDDT" format="%b %Y">Aug 2022</span>
-                                  <br dependency="JSTD|EDDT">
-                                </span>
-                              </span>
-                              <span class="paddedline" dependency="COMP|JSTA|JCIT|JCNT">
-                                <span class="companyname" id="FIELD_COMP">Infograins Software Solutions Pvt Ltd</span>
-                                <span dependency="COMP">
-                                  <span dependency="JCIT|JSTA|JCNT"> - </span>
-                                </span>
-                                <span class="joblocation jobcity" id="FIELD_JCIT">Indore</span>
-                                <span dependency="JCIT+JSTA|JCNT">, </span>
-                                <span class="joblocation jobstate" id="FIELD_JSTA">India</span>
-                                <span dependency="JSTA+JCNT" style="display: none">,</span>
-                                <span class="joblocation jobcountry" id="FIELD_JCNT"></span>
-                              </span>
-                              <span class="jobline" id="FIELD_JDES">
-                                <p> As a QA Intern, I'll assist the QA team in software testing, executing test cases, analyzing results, and ensuring products meet the highest standards of quality. I'm eager to learn, detail-oriented, and able to work in a fast-paced environment. Looking to gain valuable experience and contribute to the team's success. </p>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="sortable-item paragraph-container">
-                        <div id="PARAGRAPH_EXPR_6c318cec-3a54-cdf9-e380-4215e5ebfde1" class="paragraph PARAGRAPH_EXPR">
-                          <div class="clearfix doc-item">
-                            <div class="singlecolumn">
-                              <span class="paddedline" dependency="JTIT|JSTD|EDDT">
-                                <span class="jobtitle" id="FIELD_JTIT">Shift Incharge</span>
-                                <span dependency="JTIT"></span>
-                                <span class="datesWrapper" dependency="JSTD|EDDT">
-                                  <span class="jobdates" id="FIELD_JSTD" format="%b %Y">Feb 2022</span>
-                                  <span dependency="JSTD+EDDT"> to </span>
-                                  <span class="jobdates" id="FIELD_EDDT" format="%b %Y">Jun 2022</span>
-                                  <br dependency="JSTD|EDDT">
-                                </span>
-                              </span>
-                              <span class="paddedline" dependency="COMP|JSTA|JCIT|JCNT">
-                                <span class="companyname" id="FIELD_COMP">Mittal Coin PVT LTD</span>
-                                <span dependency="COMP">
-                                  <span dependency="JCIT|JSTA|JCNT"> - </span>
-                                </span>
-                                <span class="joblocation jobcity" id="FIELD_JCIT">Indore</span>
-                                <span dependency="JCIT+JSTA|JCNT">, </span>
-                                <span class="joblocation jobstate" id="FIELD_JSTA">India</span>
-                                <span dependency="JSTA+JCNT" style="display: none">,</span>
-                                <span class="joblocation jobcountry" id="FIELD_JCNT"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="sortable-item paragraph-container">
-                        <div id="PARAGRAPH_EXPR_6c318cec-3a54-cdf9-e380-4215e5ebfde1" class="paragraph PARAGRAPH_EXPR">
-                          <div class="clearfix doc-item">
-                            <div class="singlecolumn">
-                              <span class="paddedline" dependency="JTIT|JSTD|EDDT">
-                                <span class="jobtitle" id="FIELD_JTIT">Senior Production Engineer</span>
-                                <span dependency="JTIT"></span>
-                                <span class="datesWrapper" dependency="JSTD|EDDT">
-                                  <span class="jobdates" id="FIELD_JSTD" format="%b %Y">Aug 2021</span>
-                                  <span dependency="JSTD+EDDT"> to </span>
-                                  <span class="jobdates" id="FIELD_EDDT" format="%b %Y">Feb 2022</span>
-                                  <br dependency="JSTD|EDDT">
-                                </span>
-                              </span>
-                              <span class="paddedline" dependency="COMP|JSTA|JCIT|JCNT">
-                                <span class="companyname" id="FIELD_COMP">Signet Industries Limited</span>
-                                <span dependency="COMP">
-                                  <span dependency="JCIT|JSTA|JCNT"> - </span>
-                                </span>
-                                <span class="joblocation jobcity" id="FIELD_JCIT">Indore</span>
-                                <span dependency="JCIT+JSTA|JCNT">, </span>
-                                <span class="joblocation jobstate" id="FIELD_JSTA">India</span>
-                                <span dependency="JSTA+JCNT" style="display: none">,</span>
-                                <span class="joblocation jobcountry" id="FIELD_JCNT"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="sortable-item paragraph-container">
-                        <div id="PARAGRAPH_EXPR_6c318cec-3a54-cdf9-e380-4215e5ebfde1" class="paragraph PARAGRAPH_EXPR">
-                          <div class="clearfix doc-item">
-                            <div class="singlecolumn">
-                              <span class="paddedline" dependency="JTIT|JSTD|EDDT">
-                                <span class="jobtitle" id="FIELD_JTIT">Production Engineer</span>
-                                <span dependency="JTIT"></span>
-                                <span class="datesWrapper" dependency="JSTD|EDDT">
-                                  <span class="jobdates" id="FIELD_JSTD" format="%b %Y">Jun 2018</span>
-                                  <span dependency="JSTD+EDDT"> to </span>
-                                  <span class="jobdates" id="FIELD_EDDT" format="%b %Y">Aug 2021</span>
-                                  <br dependency="JSTD|EDDT">
-                                </span>
-                              </span>
-                              <span class="paddedline" dependency="COMP|JSTA|JCIT|JCNT">
-                                <span class="companyname" id="FIELD_COMP">Kach Motors Pvt Ltd</span>
-                                <span dependency="COMP">
-                                  <span dependency="JCIT|JSTA|JCNT"> - </span>
-                                </span>
-                                <span class="joblocation jobcity" id="FIELD_JCIT">Indore</span>
-                                <span dependency="JCIT+JSTA|JCNT">, </span>
-                                <span class="joblocation jobstate" id="FIELD_JSTA">India</span>
-                                <span dependency="JSTA+JCNT" style="display: none">,</span>
-                                <span class="joblocation jobcountry" id="FIELD_JCNT"></span>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="sortable-item section-container data-EDUC">
-            <div>
-              <div id="SECTION_EDUCedc784f3-4dfc-4337-8cb7-a02d646722cd" class="section SECTION_EDUC multi-para has-title" data-section-cd="EDUC">
-                <div class="doc-item">
-                  <div class="heading bottomborder">
-                    <div class="sectiontitle" id="SECTIONNAME_EDUC"> Education </div>
-                  </div>
-                  <div class="">
-                    <div class="sortableInner">
-                      <div class="sortable-item paragraph-container">
-                        <div id="PARAGRAPH_EDUC_ccd8ddb5-ff0d-4e4b-a1a5-9b5b1b5defd4" class="paragraph PARAGRAPH_EDUC firstparagraph">
-                          <div class="clearfix doc-item">
-                            <div class="singlecolumn">
-                              <span class="paddedline" dependency="DGRE|STUY|GRHN|GRYR|GRST|GRED|GRIP">
-                                <span class="degree" id="FIELD_DGRE">Bachelor of Engineering</span>
-                                <span dependency="DGRE+STUY">, </span>
-                                <span class="programline" id="FIELD_STUY">M.E</span>
-                                <span dependency="GRHN" class="txt-bold" style="display: none">
-                                  <span dependency="DGRE|STUY"> - </span>
-                                </span>
-                                <span id="FIELD_GRHN" class="txt-bold"></span>
-                                <span class="datesWrapper" dependency="GRYR|GRST|GRED|GRIP">
-                                  <span class="jobdates" id="FIELD_GRYR">2018</span>
-                                  <span id="FIELD_GRST" format="%b %Y"></span>
-                                  <span dependency="GRST+GRED" style="display: none">to</span>
-                                  <span id="FIELD_GRED" format="%b %Y"></span>
-                                  <span dependency="GRED|GRST" style="display: none">
-                                    <span dependency="GRIP" style="display: none">to</span>
-                                  </span>
-                                  <span id="FIELD_GRIP"></span>
-                                </span>
-                              </span>
-                              <span class="paddedline" dependency="SCHO|SCIT|SSTA|SCNT">
-                                <span class="companyname companyname_educ" id="FIELD_SCHO">Vindhya Institute of Technology and Science</span>
-                                <span dependency="SCHO">
-                                  <span dependency="SCIT|SSTA|SCNT"> - </span>
-                                </span>
-                                <span class="joblocation jobcity" id="FIELD_SCIT">Indore</span>
-                                <span dependency="SCIT+SSTA|SCNT" style="display: none">, </span>
-                                <span class="joblocation jobstate" id="FIELD_SSTA"></span>
-                                <span dependency="SSTA+SCNT" style="display: none">,</span>
-                                <span class="joblocation jobcountry" id="FIELD_SCNT"></span>
-                              </span>
-                              <span class="paddedline" dependency="GRPA" style="display: none">
-                                <span dependency="GRPA" style="display: none">GPA: </span>
-                                <span id="FIELD_GRPA"></span>
-                                <br dependency="GRPA" style="display: none" />
-                              </span>
-                              <span id="FIELD_FRFM"></span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="sortable-item paragraph-container">
-                        <div id="PARAGRAPH_EDUC_42faaffb-5ea5-49fe-aa07-87d204ddda0c" class="paragraph PARAGRAPH_EDUC">
-                          <div class="clearfix doc-item">
-                            <div class="singlecolumn">
-                              <span class="paddedline" dependency="DGRE|STUY|GRHN|GRYR|GRST|GRED|GRIP">
-                                <span class="degree" id="FIELD_DGRE">Higher Secondary</span>
-                                <span dependency="DGRE+STUY">, </span>
-                                <span class="programline" id="FIELD_STUY">PCM</span>
-                                <span dependency="GRHN" class="txt-bold" style="display: none">
-                                  <span dependency="DGRE|STUY"> - </span>
-                                </span>
-                                <span id="FIELD_GRHN" class="txt-bold"></span>
-                                <span class="datesWrapper" dependency="GRYR|GRST|GRED|GRIP">
-                                  <span class="jobdates" id="FIELD_GRYR">2013</span>
-                                  <span id="FIELD_GRST" format="%b %Y"></span>
-                                  <span dependency="GRST+GRED" style="display: none">to</span>
-                                  <span id="FIELD_GRED" format="%b %Y"></span>
-                                  <span dependency="GRED|GRST" style="display: none">
-                                    <span dependency="GRIP" style="display: none">to</span>
-                                  </span>
-                                  <span id="FIELD_GRIP"></span>
-                                </span>
-                              </span>
-                              <span class="paddedline" dependency="SCHO|SCIT|SSTA|SCNT">
-                                <span class="companyname companyname_educ" id="FIELD_SCHO">New Trinity Higher Secondary School</span>
-                                <span dependency="SCHO">
-                                  <span dependency="SCIT|SSTA|SCNT"> - </span>
-                                </span>
-                                <span class="joblocation jobcity" id="FIELD_SCIT">Indore</span>
-                                <span dependency="SCIT+SSTA|SCNT" style="display: none">, </span>
-                                <span class="joblocation jobstate" id="FIELD_SSTA"></span>
-                                <span dependency="SSTA+SCNT" style="display: none">,</span>
-                                <span class="joblocation jobcountry" id="FIELD_SCNT"></span>
-                              </span>
-                              <span class="paddedline" dependency="GRPA" style="display: none">
-                                <span dependency="GRPA" style="display: none">GPA: </span>
-                                <span id="FIELD_GRPA"></span>
-                                <br dependency="GRPA" style="display: none" />
-                              </span>
-                              <span id="FIELD_FRFM"></span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="sortable-item paragraph-container">
-                        <div id="PARAGRAPH_EDUC_42faaffb-5ea5-49fe-aa07-87d204ddda0c" class="paragraph PARAGRAPH_EDUC">
-                          <div class="clearfix doc-item">
-                            <div class="singlecolumn">
-                              <span class="paddedline" dependency="DGRE|STUY|GRHN|GRYR|GRST|GRED|GRIP">
-                                <span class="degree" id="FIELD_DGRE">Senior Secondary</span>
-                                <span dependency="DGRE+STUY"></span>
-                                <span class="programline" id="FIELD_STUY"></span>
-                                <span dependency="GRHN" class="txt-bold" style="display: none">
-                                  <span dependency="DGRE|STUY"> - </span>
-                                </span>
-                                <span id="FIELD_GRHN" class="txt-bold"></span>
-                                <span class="datesWrapper" dependency="GRYR|GRST|GRED|GRIP">
-                                  <span class="jobdates" id="FIELD_GRYR">2011</span>
-                                  <span id="FIELD_GRST" format="%b %Y"></span>
-                                  <span dependency="GRST+GRED" style="display: none">to</span>
-                                  <span id="FIELD_GRED" format="%b %Y"></span>
-                                  <span dependency="GRED|GRST" style="display: none">
-                                    <span dependency="GRIP" style="display: none">to</span>
-                                  </span>
-                                  <span id="FIELD_GRIP"></span>
-                                </span>
-                              </span>
-                              <span class="paddedline" dependency="SCHO|SCIT|SSTA|SCNT">
-                                <span class="companyname companyname_educ" id="FIELD_SCHO">New Trinity Higher Secondary School</span>
-                                <span dependency="SCHO">
-                                  <span dependency="SCIT|SSTA|SCNT"> - </span>
-                                </span>
-                                <span class="joblocation jobcity" id="FIELD_SCIT">Indore</span>
-                                <span dependency="SCIT+SSTA|SCNT" style="display: none">, </span>
-                                <span class="joblocation jobstate" id="FIELD_SSTA"></span>
-                                <span dependency="SSTA+SCNT" style="display: none">,</span>
-                                <span class="joblocation jobcountry" id="FIELD_SCNT"></span>
-                              </span>
-                              <span class="paddedline" dependency="GRPA" style="display: none">
-                                <span dependency="GRPA" style="display: none">GPA: </span>
-                                <span id="FIELD_GRPA"></span>
-                                <br dependency="GRPA" style="display: none">
-                              </span>
-                              <span id="FIELD_FRFM"></span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="sortable-item section-container data-HILT">
-            <div>
-              <div id="SECTION_HILT290f4bb1-9551-4acf-84a4-d7f4aa1731c5" class="section SECTION_HILT has-title" data-section-cd="HILT">
-                <div class="doc-item">
-                  <div class="heading bottomborder">
-                    <div class="sectiontitle" id="SECTIONNAME_HILT">Skills</div>
-                  </div>
-                  <div class="">
-                    <div class="">
-                      <div id="PARAGRAPH_HILT_afa794a0-7ac6-4066-a40b-dfd8643305df" class="paragraph PARAGRAPH_HILT firstparagraph">
-                        <div class="clearfix doc-item">
-                          <div class="singlecolumn maincolumn">
-                            <table class="twocol">
-                              <tbody>
-                                <tr>
-                                  <td class="twocol_1" id="FIELD_SKC1">
-                                    <ul>
-                                      <li>Google Sheets & Spreadsheets</li>
-                                      <li>Advance Microsoft Office</li>
-                                      <li>Basic Figma</li>
-                                      <li>Basic HTML/Css/React JS</li>
-                                      <li>Automation testing (Selenium)</li>
-                                    </ul>
-                                  </td>
-                                  <td class="twocol_2" id="FIELD_SKC2">
-                                    <ul>
-                                      <li>Apache JMeter</li>
-                                      <li>Agile and Scrum Methodologies</li>
-                                      <li>Basic Java Script</li>
-                                      <li>Data base management</li>
-                                      <li>RCA</li>
-                                    </ul>
-                                  </td>
-                                  <td class="twocol_1" id="FIELD_SKC1">
-                                    <ul>
-                                      <li>Kaizan</li>
-                                      <li>Kanban</li>
-                                      <li>SMED</li>
-                                      <li>5S</li>
-                                    </ul>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          </br>
-          </br>
-          </br>
-          </br>
-          </br>
-          </br>
-          <div class="sortable-item section-container data-HILT">
-            <div>
-              <div id="SECTION_HILT290f4bb1-9551-4acf-84a4-d7f4aa1731c5" class="section SECTION_HILT has-title" data-section-cd="HILT">
-                <div class="doc-item">
-                  <div class="heading bottomborder">
-                    <div class="sectiontitle" id="SECTIONNAME_HILT">Technical & Management Skills</div>
-                  </div>
-                  <div class="">
-                    <div class="">
-                      <div id="PARAGRAPH_HILT_afa794a0-7ac6-4066-a40b-dfd8643305df" class="paragraph PARAGRAPH_HILT firstparagraph">
-                        <div class="clearfix doc-item">
-                          <div class="singlecolumn maincolumn">
-                            <table class="twocol">
-                              <tbody>
-                                <tr>
-                                  <td class="twocol_1" id="FIELD_SKC1">
-                                    <ul>
-                                      <ol>
-                                        <h3>Project Management Skills</h3>
-                                      </ol>
-                                      <li>Project Planning</li>
-                                      <li>Resource Management</li>
-                                      <li>Communication</li>
-                                      <li>Leadership</li>
-                                      <li>Documentation and Reporting</li>
-                                      <li>Time Management</li>
-                                    </ul>
-                                  </td>
-                                  <td class="twocol_2" id="FIELD_SKC2">
-                                    <ul>
-                                      <ol>
-                                        <h3>Quality Assurance (QA) Skills</h3>
-                                      </ol>
-                                      <li>Quality Assurance Principles</li>
-                                      <li>Manual Testing</li>
-                                      <li>Basic Automation Testing</li>
-                                      <li>Quality Metrics</li>
-                                      <li>Coding Basics</li>
-                                    </ul>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="sortable-item section-container data-HILT">
-            <div>
-              <div id="SECTION_HILT290f4bb1-9551-4acf-84a4-d7f4aa1731c5" class="section SECTION_HILT has-title" data-section-cd="HILT">
-                <div class="doc-item">
-                  <div class="heading bottomborder">
-                    <div class="sectiontitle" id="SECTIONNAME_HILT">Language</div>
-                  </div>
-                  <div class="">
-                    <div class="">
-                      <div id="PARAGRAPH_HILT_afa794a0-7ac6-4066-a40b-dfd8643305df" class="paragraph PARAGRAPH_HILT firstparagraph">
-                        <div class="">
-                          <div class="sortableInner">
-                            <div class="sortable-item paragraph-container native-lang-2">
-                              <div class="sortable-item paragraph-container">
-                                <div id="PARAGRAPH_LNGG_4e2ef0b9-e232-cb81-d10b-37889e5c7c99" class="paragraph PARAGRAPH_LNGG para_odd">
-                                  <div class="clearfix doc-item2">
-                                    <div class="singlecolumn infotilepara">
-                                      <div class="field">
-                                        <span class="txt-bold" id="FIELD_FRFM">Punjabi</span>
-                                        <span class="colon" dependency="FRFM">:</span>
-                                        <span class="flt-right" id="FIELD_RATG">C2</span>
-                                      </div>
-                                      <div class="sliced-rect" dependency="RATV">
-                                        <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                        <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                        <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                        <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                        <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                        <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                      </div>
-                                      <div class="field field-ratt" dependency="RATT">
-                                        <span id="FIELD_RATT">Proficient</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="sortable-item paragraph-container">
-                                <div id="PARAGRAPH_LNGG_4e2ef0b9-e232-cb81-d10b-37889e5c7c99" class="paragraph PARAGRAPH_LNGG para_odd">
-                                  <div class="clearfix doc-item2">
-                                    <div class="singlecolumn infotilepara">
-                                      <div class="field">
-                                        <span class="txt-bold" id="FIELD_FRFM">Hindi</span>
-                                        <span class="colon" dependency="FRFM">:</span>
-                                        <span class="flt-right" id="FIELD_RATG">C2</span>
-                                      </div>
-                                      <div class="sliced-rect" dependency="RATV">
-                                        <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                        <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                        <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                        <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                        <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                        <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                      </div>
-                                      <div class="field field-ratt" dependency="RATT">
-                                        <span id="FIELD_RATT">Proficient</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="">
-                    <div class="">
-                      <div id="PARAGRAPH_HILT_afa794a0-7ac6-4066-a40b-dfd8643305df" class="paragraph PARAGRAPH_HILT firstparagraph">
-                        <div class="">
-                          <div class="sortableInner">
-                            <div class="sortable-item paragraph-container native-lang-2">
-                              <div class="sortable-item paragraph-container">
-                                <div id="PARAGRAPH_LNGG_4e2ef0b9-e232-cb81-d10b-37889e5c7c99" class="paragraph PARAGRAPH_LNGG para_odd">
-                                  <div class="clearfix doc-item2">
-                                    <div class="singlecolumn infotilepara">
-                                      <div class="field">
-                                        <span class="txt-bold" id="FIELD_FRFM">English</span>
-                                        <span class="colon" dependency="FRFM">:</span>
-                                        <span class="flt-right" id="FIELD_RATG">C1</span>
-                                      </div>
-                                      <div class="sliced-rect" dependency="RATV">
-                                        <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                        <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                        <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                        <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                        <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                        <div class="sliced-rect-tile" id="FIELD_RATV" type="slicedrect" style="width: calc(16.6667% - 2.5px)"></div>
-                                      </div>
-                                      <div class="field field-ratt" dependency="RATT">
-                                        <span id="FIELD_RATT">Advance</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="sortable-item section-container data-EXPR">
-            <div>
-              <div id="SECTION_EXPR1474fc35-e19c-4e06-ab75-de6d5af5d272" class="section SECTION_EXPR multi-para has-title" data-section-cd="EXPR">
-                <div class="doc-item">
-                  <div class="heading bottomborder">
-                    <div class="sectiontitle" id="SECTIONNAME_EXPR">Projects</div>
-                  </div>
+                <div class="">
                   <div class="sortableInner">
                     <div class="sortable-item paragraph-container">
-                      <div id="PARAGRAPH_EXPR_3280449d-72b2-4368-cb9d-3e82c65d37cc" class="paragraph PARAGRAPH_EXPR firstparagraph">
+                      <div id="PARAGRAPH_EXPR_3280449d-72b2-4368-cb9d-3e82c65d37cc"
+                        class="paragraph PARAGRAPH_EXPR firstparagraph">
                         <div class="clearfix doc-item">
                           <div class="singlecolumn">
                             <span class="paddedline" dependency="JTIT|JSTD|EDDT">
-                              <span class="jobtitle" id="FIELD_JTIT">Stay Busy</span>
+                              <span class="jobtitle" id="FIELD_JTIT">IT Project Manager</span>
                               <span dependency="JTIT"></span>
+                              <span class="datesWrapper" dependency="JSTD|EDDT">
+                                <span class="jobdates" id="FIELD_JSTD" format="%b %Y">May 2023</span>
+                                <span dependency="JSTD+EDDT"> to </span>
+                                <span class="jobdates" id="FIELD_EDDT" format="%b %Y">Current</span>
+                                <br dependency="JSTD|EDDT" />
+                              </span>
                             </span>
                             <span class="paddedline" dependency="COMP|JSTA|JCIT|JCNT">
-                              <span class="companyname" id="FIELD_COMP">Flutter Application & React Web Admin</span>
+                              <span class="companyname" id="FIELD_COMP">MMF Infotech Technologies Pvt Ltd</span>
                               <span dependency="COMP">
                                 <span dependency="JCIT|JSTA|JCNT"> - </span>
                               </span>
-                              <span class="joblocation jobcity" id="FIELD_JCIT">Quality Assurance</span>
+                              <span class="joblocation jobcity" id="FIELD_JCIT">Indore</span>
                               <span dependency="JCIT+JSTA|JCNT">, </span>
-                              <span class="joblocation jobstate" id="FIELD_JSTA">MMF Infotech Technologies Pvt Ltd</span>
-                              <span dependency="JSTA+JCNT" style="display: none">,</span>
-                              <span class="joblocation jobcountry" id="FIELD_JCNT"></span>
-                            </span>
-                            <span class="paddedline" dependency="COMP|JSTA|JCIT|JCNT">
-                              <span class="companyname" id="FIELD_COMP">Project Status</span>
-                              <span dependency="COMP">
-                                
-                              </span>
-                              <span class="circle-text"></span>
-                              <span class="joblocation jobcity" id="FIELD_JCIT">Live</span>
-                              <span dependency="JCIT+JSTA|JCNT">-</span>
-                              <span class="joblocation jobstate" id="FIELD_JSTA">Play Store, App store & Web</span>
+                              <span class="joblocation jobstate" id="FIELD_JSTA">India</span>
                               <span dependency="JSTA+JCNT" style="display: none">,</span>
                               <span class="joblocation jobcountry" id="FIELD_JCNT"></span>
                             </span>
                             <span class="jobline" id="FIELD_JDES">
-                              <p> fssdfsdf</p>
+                              <p> As an experienced IT Project Manager, I bring a wealth of expertise, successfully
+                                leading and delivering projects with precise planning and a Quality Assurance
+                                perspective. I excel in managing cross-functional teams, ensuring projects are on time,
+                                within budget, and of top-notch quality. Passionate about technology-driven innovation
+                                and business growth, I am well-equipped to tackle IT project challenges, delivering
+                                successful outcomes for organizations. </p>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sortable-item paragraph-container">
+                      <div id="PARAGRAPH_EXPR_6c318cec-3a54-cdf9-e380-4215e5ebfde1" class="paragraph PARAGRAPH_EXPR">
+                        <div class="clearfix doc-item">
+                          <div class="singlecolumn">
+                            <span class="paddedline" dependency="JTIT|JSTD|EDDT">
+                              <span class="jobtitle" id="FIELD_JTIT">Quality Assurance Analyst</span>
+                              <span dependency="JTIT"></span>
+                              <span class="datesWrapper" dependency="JSTD|EDDT">
+                                <span class="jobdates" id="FIELD_JSTD" format="%b %Y">Sep 2022</span>
+                                <span dependency="JSTD+EDDT"> to </span>
+                                <span class="jobdates" id="FIELD_EDDT" format="%b %Y">May 2023</span>
+                                <br dependency="JSTD|EDDT" />
+                              </span>
+                            </span>
+                            <span class="paddedline" dependency="COMP|JSTA|JCIT|JCNT">
+                              <span class="companyname" id="FIELD_COMP">MMF Infotech Technologies Pvt Ltd</span>
+                              <span dependency="COMP">
+                                <span dependency="JCIT|JSTA|JCNT"> - </span>
+                              </span>
+                              <span class="joblocation jobcity" id="FIELD_JCIT">Indore</span>
+                              <span dependency="JCIT+JSTA|JCNT">, </span>
+                              <span class="joblocation jobstate" id="FIELD_JSTA">India</span>
+                              <span dependency="JSTA+JCNT" style="display: none">,</span>
+                              <span class="joblocation jobcountry" id="FIELD_JCNT"></span>
+                            </span>
+                            <span class="jobline" id="FIELD_JDES">
+                              <p> As a Quality Analyst, I identify and fix production defects, implementing preventative
+                                and corrective actions to meet user expectations. Skilled in data analysis, I improve
+                                product quality and efficiency. With extensive testing experience, I create effective
+                                plans, anticipating issues to ensure high standards. Thriving in fast-paced
+                                environments, I excel in delivering results. Passionate about quality assurance, I seek
+                                new challenges. If you need a results-oriented Quality Analyst, please reach out. </p>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sortable-item paragraph-container">
+                      <div id="PARAGRAPH_EXPR_6c318cec-3a54-cdf9-e380-4215e5ebfde1" class="paragraph PARAGRAPH_EXPR">
+                        <div class="clearfix doc-item">
+                          <div class="singlecolumn">
+                            <span class="paddedline" dependency="JTIT|JSTD|EDDT">
+                              <span class="jobtitle" id="FIELD_JTIT">Quality Analyst Intern</span>
+                              <span dependency="JTIT"></span>
+                              <span class="datesWrapper" dependency="JSTD|EDDT">
+                                <span class="jobdates" id="FIELD_JSTD" format="%b %Y">Jun 2022</span>
+                                <span dependency="JSTD+EDDT"> to </span>
+                                <span class="jobdates" id="FIELD_EDDT" format="%b %Y">Aug 2022</span>
+                                <br dependency="JSTD|EDDT">
+                              </span>
+                            </span>
+                            <span class="paddedline" dependency="COMP|JSTA|JCIT|JCNT">
+                              <span class="companyname" id="FIELD_COMP">Infograins Software Solutions Pvt Ltd</span>
+                              <span dependency="COMP">
+                                <span dependency="JCIT|JSTA|JCNT"> - </span>
+                              </span>
+                              <span class="joblocation jobcity" id="FIELD_JCIT">Indore</span>
+                              <span dependency="JCIT+JSTA|JCNT">, </span>
+                              <span class="joblocation jobstate" id="FIELD_JSTA">India</span>
+                              <span dependency="JSTA+JCNT" style="display: none">,</span>
+                              <span class="joblocation jobcountry" id="FIELD_JCNT"></span>
+                            </span>
+                            <span class="jobline" id="FIELD_JDES">
+                              <p> As a QA Intern, I'll assist the QA team in software testing, executing test cases,
+                                analyzing results, and ensuring products meet the highest standards of quality. I'm
+                                eager to learn, detail-oriented, and able to work in a fast-paced environment. Looking
+                                to gain valuable experience and contribute to the team's success. </p>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sortable-item paragraph-container">
+                      <div id="PARAGRAPH_EXPR_6c318cec-3a54-cdf9-e380-4215e5ebfde1" class="paragraph PARAGRAPH_EXPR">
+                        <div class="clearfix doc-item">
+                          <div class="singlecolumn">
+                            <span class="paddedline" dependency="JTIT|JSTD|EDDT">
+                              <span class="jobtitle" id="FIELD_JTIT">Shift Incharge</span>
+                              <span dependency="JTIT"></span>
+                              <span class="datesWrapper" dependency="JSTD|EDDT">
+                                <span class="jobdates" id="FIELD_JSTD" format="%b %Y">Feb 2022</span>
+                                <span dependency="JSTD+EDDT"> to </span>
+                                <span class="jobdates" id="FIELD_EDDT" format="%b %Y">Jun 2022</span>
+                                <br dependency="JSTD|EDDT">
+                              </span>
+                            </span>
+                            <span class="paddedline" dependency="COMP|JSTA|JCIT|JCNT">
+                              <span class="companyname" id="FIELD_COMP">Mittal Coin PVT LTD</span>
+                              <span dependency="COMP">
+                                <span dependency="JCIT|JSTA|JCNT"> - </span>
+                              </span>
+                              <span class="joblocation jobcity" id="FIELD_JCIT">Indore</span>
+                              <span dependency="JCIT+JSTA|JCNT">, </span>
+                              <span class="joblocation jobstate" id="FIELD_JSTA">India</span>
+                              <span dependency="JSTA+JCNT" style="display: none">,</span>
+                              <span class="joblocation jobcountry" id="FIELD_JCNT"></span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sortable-item paragraph-container">
+                      <div id="PARAGRAPH_EXPR_6c318cec-3a54-cdf9-e380-4215e5ebfde1" class="paragraph PARAGRAPH_EXPR">
+                        <div class="clearfix doc-item">
+                          <div class="singlecolumn">
+                            <span class="paddedline" dependency="JTIT|JSTD|EDDT">
+                              <span class="jobtitle" id="FIELD_JTIT">Senior Production Engineer</span>
+                              <span dependency="JTIT"></span>
+                              <span class="datesWrapper" dependency="JSTD|EDDT">
+                                <span class="jobdates" id="FIELD_JSTD" format="%b %Y">Aug 2021</span>
+                                <span dependency="JSTD+EDDT"> to </span>
+                                <span class="jobdates" id="FIELD_EDDT" format="%b %Y">Feb 2022</span>
+                                <br dependency="JSTD|EDDT">
+                              </span>
+                            </span>
+                            <span class="paddedline" dependency="COMP|JSTA|JCIT|JCNT">
+                              <span class="companyname" id="FIELD_COMP">Signet Industries Limited</span>
+                              <span dependency="COMP">
+                                <span dependency="JCIT|JSTA|JCNT"> - </span>
+                              </span>
+                              <span class="joblocation jobcity" id="FIELD_JCIT">Indore</span>
+                              <span dependency="JCIT+JSTA|JCNT">, </span>
+                              <span class="joblocation jobstate" id="FIELD_JSTA">India</span>
+                              <span dependency="JSTA+JCNT" style="display: none">,</span>
+                              <span class="joblocation jobcountry" id="FIELD_JCNT"></span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sortable-item paragraph-container">
+                      <div id="PARAGRAPH_EXPR_6c318cec-3a54-cdf9-e380-4215e5ebfde1" class="paragraph PARAGRAPH_EXPR">
+                        <div class="clearfix doc-item">
+                          <div class="singlecolumn">
+                            <span class="paddedline" dependency="JTIT|JSTD|EDDT">
+                              <span class="jobtitle" id="FIELD_JTIT">Production Engineer</span>
+                              <span dependency="JTIT"></span>
+                              <span class="datesWrapper" dependency="JSTD|EDDT">
+                                <span class="jobdates" id="FIELD_JSTD" format="%b %Y">Jun 2018</span>
+                                <span dependency="JSTD+EDDT"> to </span>
+                                <span class="jobdates" id="FIELD_EDDT" format="%b %Y">Aug 2021</span>
+                                <br dependency="JSTD|EDDT">
+                              </span>
+                            </span>
+                            <span class="paddedline" dependency="COMP|JSTA|JCIT|JCNT">
+                              <span class="companyname" id="FIELD_COMP">Kach Motors Pvt Ltd</span>
+                              <span dependency="COMP">
+                                <span dependency="JCIT|JSTA|JCNT"> - </span>
+                              </span>
+                              <span class="joblocation jobcity" id="FIELD_JCIT">Indore</span>
+                              <span dependency="JCIT+JSTA|JCNT">, </span>
+                              <span class="joblocation jobstate" id="FIELD_JSTA">India</span>
+                              <span dependency="JSTA+JCNT" style="display: none">,</span>
+                              <span class="joblocation jobcountry" id="FIELD_JCNT"></span>
                             </span>
                           </div>
                         </div>
@@ -1294,19 +911,149 @@
               </div>
             </div>
           </div>
-          <div class="sortable-item section-container data-SUMM">
-            <div>
-              <div id="SECTION_SUMM45ef1a3f-b02a-448a-949c-3d1a43215523" class="section SECTION_SUMM has-title" data-section-cd="SUMM">
-                <div class="doc-item">
-                  <div class="heading bottomborder">
-                    <div class="sectiontitle" id="SECTIONNAME_SUMM"> Declaration </div>
-                  </div>
-                  <div class="">
-                    <div class="">
-                      <div id="PARAGRAPH_SUMM_db1abf75-1d6d-4c99-b5f9-f766e05db4b8" class="paragraph PARAGRAPH_SUMM firstparagraph">
+        </div>
+        <div class="sortable-item section-container data-EDUC">
+          <div>
+            <div id="SECTION_EDUCedc784f3-4dfc-4337-8cb7-a02d646722cd" class="section SECTION_EDUC multi-para has-title"
+              data-section-cd="EDUC">
+              <div class="doc-item">
+                <div class="heading bottomborder">
+                  <div class="sectiontitle" id="SECTIONNAME_EDUC"> Education </div>
+                </div>
+                <div class="">
+                  <div class="sortableInner">
+                    <div class="sortable-item paragraph-container">
+                      <div id="PARAGRAPH_EDUC_ccd8ddb5-ff0d-4e4b-a1a5-9b5b1b5defd4"
+                        class="paragraph PARAGRAPH_EDUC firstparagraph">
                         <div class="clearfix doc-item">
-                          <div class="singlecolumn" id="FIELD_FRFM">
-                            <p>i hereby declare that all the information provided in this document is true and accurate to the best of my knowledge. I understand that any false or misleading information may result in disqualification from the application process or, if already employed, may lead to termination. I also consent to the verification of any information provided as part of this application.</p>
+                          <div class="singlecolumn">
+                            <span class="paddedline" dependency="DGRE|STUY|GRHN|GRYR|GRST|GRED|GRIP">
+                              <span class="degree" id="FIELD_DGRE">Bachelor of Engineering</span>
+                              <span dependency="DGRE+STUY">, </span>
+                              <span class="programline" id="FIELD_STUY">M.E</span>
+                              <span dependency="GRHN" class="txt-bold" style="display: none">
+                                <span dependency="DGRE|STUY"> - </span>
+                              </span>
+                              <span id="FIELD_GRHN" class="txt-bold"></span>
+                              <span class="datesWrapper" dependency="GRYR|GRST|GRED|GRIP">
+                                <span class="jobdates" id="FIELD_GRYR">2018</span>
+                                <span id="FIELD_GRST" format="%b %Y"></span>
+                                <span dependency="GRST+GRED" style="display: none">to</span>
+                                <span id="FIELD_GRED" format="%b %Y"></span>
+                                <span dependency="GRED|GRST" style="display: none">
+                                  <span dependency="GRIP" style="display: none">to</span>
+                                </span>
+                                <span id="FIELD_GRIP"></span>
+                              </span>
+                            </span>
+                            <span class="paddedline" dependency="SCHO|SCIT|SSTA|SCNT">
+                              <span class="companyname companyname_educ" id="FIELD_SCHO">Vindhya Institute of Technology
+                                and Science</span>
+                              <span dependency="SCHO">
+                                <span dependency="SCIT|SSTA|SCNT"> - </span>
+                              </span>
+                              <span class="joblocation jobcity" id="FIELD_SCIT">Indore</span>
+                              <span dependency="SCIT+SSTA|SCNT" style="display: none">, </span>
+                              <span class="joblocation jobstate" id="FIELD_SSTA"></span>
+                              <span dependency="SSTA+SCNT" style="display: none">,</span>
+                              <span class="joblocation jobcountry" id="FIELD_SCNT"></span>
+                            </span>
+                            <span class="paddedline" dependency="GRPA" style="display: none">
+                              <span dependency="GRPA" style="display: none">GPA: </span>
+                              <span id="FIELD_GRPA"></span>
+                              <br dependency="GRPA" style="display: none" />
+                            </span>
+                            <span id="FIELD_FRFM"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sortable-item paragraph-container">
+                      <div id="PARAGRAPH_EDUC_42faaffb-5ea5-49fe-aa07-87d204ddda0c" class="paragraph PARAGRAPH_EDUC">
+                        <div class="clearfix doc-item">
+                          <div class="singlecolumn">
+                            <span class="paddedline" dependency="DGRE|STUY|GRHN|GRYR|GRST|GRED|GRIP">
+                              <span class="degree" id="FIELD_DGRE">Higher Secondary</span>
+                              <span dependency="DGRE+STUY">, </span>
+                              <span class="programline" id="FIELD_STUY">PCM</span>
+                              <span dependency="GRHN" class="txt-bold" style="display: none">
+                                <span dependency="DGRE|STUY"> - </span>
+                              </span>
+                              <span id="FIELD_GRHN" class="txt-bold"></span>
+                              <span class="datesWrapper" dependency="GRYR|GRST|GRED|GRIP">
+                                <span class="jobdates" id="FIELD_GRYR">2013</span>
+                                <span id="FIELD_GRST" format="%b %Y"></span>
+                                <span dependency="GRST+GRED" style="display: none">to</span>
+                                <span id="FIELD_GRED" format="%b %Y"></span>
+                                <span dependency="GRED|GRST" style="display: none">
+                                  <span dependency="GRIP" style="display: none">to</span>
+                                </span>
+                                <span id="FIELD_GRIP"></span>
+                              </span>
+                            </span>
+                            <span class="paddedline" dependency="SCHO|SCIT|SSTA|SCNT">
+                              <span class="companyname companyname_educ" id="FIELD_SCHO">New Trinity Higher Secondary
+                                School</span>
+                              <span dependency="SCHO">
+                                <span dependency="SCIT|SSTA|SCNT"> - </span>
+                              </span>
+                              <span class="joblocation jobcity" id="FIELD_SCIT">Indore</span>
+                              <span dependency="SCIT+SSTA|SCNT" style="display: none">, </span>
+                              <span class="joblocation jobstate" id="FIELD_SSTA"></span>
+                              <span dependency="SSTA+SCNT" style="display: none">,</span>
+                              <span class="joblocation jobcountry" id="FIELD_SCNT"></span>
+                            </span>
+                            <span class="paddedline" dependency="GRPA" style="display: none">
+                              <span dependency="GRPA" style="display: none">GPA: </span>
+                              <span id="FIELD_GRPA"></span>
+                              <br dependency="GRPA" style="display: none" />
+                            </span>
+                            <span id="FIELD_FRFM"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sortable-item paragraph-container">
+                      <div id="PARAGRAPH_EDUC_42faaffb-5ea5-49fe-aa07-87d204ddda0c" class="paragraph PARAGRAPH_EDUC">
+                        <div class="clearfix doc-item">
+                          <div class="singlecolumn">
+                            <span class="paddedline" dependency="DGRE|STUY|GRHN|GRYR|GRST|GRED|GRIP">
+                              <span class="degree" id="FIELD_DGRE">Senior Secondary</span>
+                              <span dependency="DGRE+STUY"></span>
+                              <span class="programline" id="FIELD_STUY"></span>
+                              <span dependency="GRHN" class="txt-bold" style="display: none">
+                                <span dependency="DGRE|STUY"> - </span>
+                              </span>
+                              <span id="FIELD_GRHN" class="txt-bold"></span>
+                              <span class="datesWrapper" dependency="GRYR|GRST|GRED|GRIP">
+                                <span class="jobdates" id="FIELD_GRYR">2011</span>
+                                <span id="FIELD_GRST" format="%b %Y"></span>
+                                <span dependency="GRST+GRED" style="display: none">to</span>
+                                <span id="FIELD_GRED" format="%b %Y"></span>
+                                <span dependency="GRED|GRST" style="display: none">
+                                  <span dependency="GRIP" style="display: none">to</span>
+                                </span>
+                                <span id="FIELD_GRIP"></span>
+                              </span>
+                            </span>
+                            <span class="paddedline" dependency="SCHO|SCIT|SSTA|SCNT">
+                              <span class="companyname companyname_educ" id="FIELD_SCHO">New Trinity Higher Secondary
+                                School</span>
+                              <span dependency="SCHO">
+                                <span dependency="SCIT|SSTA|SCNT"> - </span>
+                              </span>
+                              <span class="joblocation jobcity" id="FIELD_SCIT">Indore</span>
+                              <span dependency="SCIT+SSTA|SCNT" style="display: none">, </span>
+                              <span class="joblocation jobstate" id="FIELD_SSTA"></span>
+                              <span dependency="SSTA+SCNT" style="display: none">,</span>
+                              <span class="joblocation jobcountry" id="FIELD_SCNT"></span>
+                            </span>
+                            <span class="paddedline" dependency="GRPA" style="display: none">
+                              <span dependency="GRPA" style="display: none">GPA: </span>
+                              <span id="FIELD_GRPA"></span>
+                              <br dependency="GRPA" style="display: none">
+                            </span>
+                            <span id="FIELD_FRFM"></span>
                           </div>
                         </div>
                       </div>
@@ -1317,5 +1064,339 @@
             </div>
           </div>
         </div>
-  </body>
+        <div class="sortable-item section-container data-HILT">
+          <div>
+            <div id="SECTION_HILT290f4bb1-9551-4acf-84a4-d7f4aa1731c5" class="section SECTION_HILT has-title"
+              data-section-cd="HILT">
+              <div class="doc-item">
+                <div class="heading bottomborder">
+                  <div class="sectiontitle" id="SECTIONNAME_HILT">Skills</div>
+                </div>
+                <div class="">
+                  <div class="">
+                    <div id="PARAGRAPH_HILT_afa794a0-7ac6-4066-a40b-dfd8643305df"
+                      class="paragraph PARAGRAPH_HILT firstparagraph">
+                      <div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                          <table class="twocol">
+                            <tbody>
+                              <tr>
+                                <td class="twocol_1" id="FIELD_SKC1">
+                                  <ul>
+                                    <li>Google Sheets & Spreadsheets</li>
+                                    <li>Advance Microsoft Office</li>
+                                    <li>Basic Figma</li>
+                                    <li>Basic HTML/Css/React JS</li>
+                                    <li>Automation testing (Selenium)</li>
+                                  </ul>
+                                </td>
+                                <td class="twocol_2" id="FIELD_SKC2">
+                                  <ul>
+                                    <li>Apache JMeter</li>
+                                    <li>Agile and Scrum Methodologies</li>
+                                    <li>Basic Java Script</li>
+                                    <li>Data base management</li>
+                                    <li>RCA</li>
+                                  </ul>
+                                </td>
+                                <td class="twocol_1" id="FIELD_SKC1">
+                                  <ul>
+                                    <li>Kaizan</li>
+                                    <li>Kanban</li>
+                                    <li>SMED</li>
+                                    <li>5S</li>
+                                  </ul>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        <div class="sortable-item section-container data-HILT">
+          <div>
+            <div id="SECTION_HILT290f4bb1-9551-4acf-84a4-d7f4aa1731c5" class="section SECTION_HILT has-title"
+              data-section-cd="HILT">
+              <div class="doc-item">
+                <div class="heading bottomborder">
+                  <div class="sectiontitle" id="SECTIONNAME_HILT">Technical & Management Skills</div>
+                </div>
+                <div class="">
+                  <div class="">
+                    <div id="PARAGRAPH_HILT_afa794a0-7ac6-4066-a40b-dfd8643305df"
+                      class="paragraph PARAGRAPH_HILT firstparagraph">
+                      <div class="clearfix doc-item">
+                        <div class="singlecolumn maincolumn">
+                          <table class="twocol">
+                            <tbody>
+                              <tr>
+                                <td class="twocol_1" id="FIELD_SKC1">
+                                  <h3>Project Management Skills</h3>
+                                  <ul>
+                                    <ol>
+                                    </ol>
+                                    <li>Project Planning</li>
+                                    <li>Resource Management</li>
+                                    <li>Communication</li>
+                                    <li>Leadership</li>
+                                    <li>Documentation and Reporting</li>
+                                    <li>Time Management</li>
+                                  </ul>
+                                </td>
+                                <td class="twocol_2" id="FIELD_SKC2">
+                                  <ul>
+                                    <ol>
+                                      <h3>Quality Assurance (QA) Skills</h3>
+                                    </ol>
+                                    <li>Quality Assurance Principles</li>
+                                    <li>Manual Testing</li>
+                                    <li>Basic Automation Testing</li>
+                                    <li>Quality Metrics</li>
+                                    <li>Coding Basics</li>
+                                  </ul>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sortable-item section-container data-HILT">
+          <div>
+            <div id="SECTION_HILT290f4bb1-9551-4acf-84a4-d7f4aa1731c5" class="section SECTION_HILT has-title"
+              data-section-cd="HILT">
+              <div class="doc-item">
+                <div class="heading bottomborder">
+                  <div class="sectiontitle" id="SECTIONNAME_HILT">Language</div>
+                </div>
+                <div class="">
+                  <div class="">
+                    <div id="PARAGRAPH_HILT_afa794a0-7ac6-4066-a40b-dfd8643305df"
+                      class="paragraph PARAGRAPH_HILT firstparagraph">
+                      <div class="">
+                        <div class="sortableInner">
+                          <div class="sortable-item paragraph-container native-lang-2">
+                            <div class="sortable-item paragraph-container">
+                              <div id="PARAGRAPH_LNGG_4e2ef0b9-e232-cb81-d10b-37889e5c7c99"
+                                class="paragraph PARAGRAPH_LNGG para_odd">
+                                <div class="clearfix doc-item2">
+                                  <div class="singlecolumn infotilepara">
+                                    <div class="field">
+                                      <span class="txt-bold" id="FIELD_FRFM">Punjabi</span>
+                                      <span class="colon" dependency="FRFM">:</span>
+                                      <span class="flt-right" id="FIELD_RATG">C2</span>
+                                    </div>
+                                    <div class="sliced-rect" dependency="RATV">
+                                      <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                      <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                      <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                      <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                      <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                      <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                    </div>
+                                    <div class="field field-ratt" dependency="RATT">
+                                      <span id="FIELD_RATT">Proficient</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="sortable-item paragraph-container">
+                              <div id="PARAGRAPH_LNGG_4e2ef0b9-e232-cb81-d10b-37889e5c7c99"
+                                class="paragraph PARAGRAPH_LNGG para_odd">
+                                <div class="clearfix doc-item2">
+                                  <div class="singlecolumn infotilepara">
+                                    <div class="field">
+                                      <span class="txt-bold" id="FIELD_FRFM">Hindi</span>
+                                      <span class="colon" dependency="FRFM">:</span>
+                                      <span class="flt-right" id="FIELD_RATG">C2</span>
+                                    </div>
+                                    <div class="sliced-rect" dependency="RATV">
+                                      <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                      <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                      <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                      <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                      <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                      <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                    </div>
+                                    <div class="field field-ratt" dependency="RATT">
+                                      <span id="FIELD_RATT">Proficient</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="">
+                  <div class="">
+                    <div id="PARAGRAPH_HILT_afa794a0-7ac6-4066-a40b-dfd8643305df"
+                      class="paragraph PARAGRAPH_HILT firstparagraph">
+                      <div class="">
+                        <div class="sortableInner">
+                          <div class="sortable-item paragraph-container native-lang-2">
+                            <div class="sortable-item paragraph-container">
+                              <div id="PARAGRAPH_LNGG_4e2ef0b9-e232-cb81-d10b-37889e5c7c99"
+                                class="paragraph PARAGRAPH_LNGG para_odd">
+                                <div class="clearfix doc-item2">
+                                  <div class="singlecolumn infotilepara">
+                                    <div class="field">
+                                      <span class="txt-bold" id="FIELD_FRFM">English</span>
+                                      <span class="colon" dependency="FRFM">:</span>
+                                      <span class="flt-right" id="FIELD_RATG">C1</span>
+                                    </div>
+                                    <div class="sliced-rect" dependency="RATV">
+                                      <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                      <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                      <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                      <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                      <div class="sliced-rect-tile ratvfill" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                      <div class="sliced-rect-tile" id="FIELD_RATV" type="slicedrect"
+                                        style="width: calc(16.6667% - 2.5px)"></div>
+                                    </div>
+                                    <div class="field field-ratt" dependency="RATT">
+                                      <span id="FIELD_RATT">Advance</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sortable-item section-container data-EXPR">
+          <div>
+            <div id="SECTION_EXPR1474fc35-e19c-4e06-ab75-de6d5af5d272" class="section SECTION_EXPR multi-para has-title"
+              data-section-cd="EXPR">
+              <div class="doc-item">
+                <div class="heading bottomborder">
+                  <div class="sectiontitle" id="SECTIONNAME_EXPR">Projects</div>
+                </div>
+                <div class="sortableInner">
+                  <div class="sortable-item paragraph-container">
+                    <div id="PARAGRAPH_EXPR_3280449d-72b2-4368-cb9d-3e82c65d37cc"
+                      class="paragraph PARAGRAPH_EXPR firstparagraph">
+                      <div class="clearfix doc-item">
+                        <div class="singlecolumn">
+                          <span class="paddedline" dependency="JTIT|JSTD|EDDT">
+                            <span class="jobtitle" id="FIELD_JTIT">Stay Busy</span>
+                            <span dependency="JTIT"></span>
+                          </span>
+                          <span class="paddedline" dependency="COMP|JSTA|JCIT|JCNT">
+                            <span class="companyname" id="FIELD_COMP">Flutter Application & React Web Admin</span>
+                            <span dependency="COMP">
+                              <span dependency="JCIT|JSTA|JCNT"> - </span>
+                            </span>
+                            <span class="joblocation jobcity" id="FIELD_JCIT">Quality Assurance</span>
+                            <span dependency="JCIT+JSTA|JCNT">, </span>
+                            <span class="joblocation jobstate" id="FIELD_JSTA">MMF Infotech Technologies Pvt Ltd</span>
+                            <span dependency="JSTA+JCNT" style="display: none">,</span>
+                            <span class="joblocation jobcountry" id="FIELD_JCNT"></span>
+                          </span>
+                          <span class="paddedline" dependency="COMP|JSTA|JCIT|JCNT">
+                            <span class="companyname" id="FIELD_COMP">Project Status</span>
+                            <span dependency="COMP">
+
+                            </span>
+                            <span class="circle-text"></span>
+                            <span class="joblocation jobcity" id="FIELD_JCIT">Live</span>
+                            <span dependency="JCIT+JSTA|JCNT">-</span>
+                            <span class="joblocation jobstate" id="FIELD_JSTA">Play Store, App store & Web</span>
+                            <span dependency="JSTA+JCNT" style="display: none">,</span>
+                            <span class="joblocation jobcountry" id="FIELD_JCNT"></span>
+                          </span>
+                          <span class="jobline" id="FIELD_JDES">
+                            <p> The primary objective of this project is to offer a wide range of services to the
+                              community, enabling people to access these services conveniently online. These services
+                              encompass various professional fields, including painters, handy workers, plumbing
+                              experts, and more. Additionally, an administrative interface empowers users to not only
+                              update the available services but also facilitates real-time communication through a chat
+                              support system with the administrator.</p>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sortable-item section-container data-SUMM">
+          <div>
+            <div id="SECTION_SUMM45ef1a3f-b02a-448a-949c-3d1a43215523" class="section SECTION_SUMM has-title"
+              data-section-cd="SUMM">
+              <div class="doc-item">
+                <div class="heading bottomborder">
+                  <div class="sectiontitle" id="SECTIONNAME_SUMM"> Declaration </div>
+                </div>
+                <div class="">
+                  <div class="">
+                    <div id="PARAGRAPH_SUMM_db1abf75-1d6d-4c99-b5f9-f766e05db4b8"
+                      class="paragraph PARAGRAPH_SUMM firstparagraph">
+                      <div class="clearfix doc-item">
+                        <div class="singlecolumn" id="FIELD_FRFM">
+                          <p>I hereby declare that all the information provided in this document is true and accurate to
+                            the best of my knowledge. I understand that any false or misleading information may result
+                            in disqualification from the application process or, if already employed, may lead to
+                            termination. I also consent to the verification of any information provided as part of this
+                            application.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+
 </html>
